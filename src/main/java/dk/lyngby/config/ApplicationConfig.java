@@ -1,6 +1,8 @@
 package dk.lyngby.config;
 
 import dk.lyngby.controller.security.AccessManagerController;
+import dk.lyngby.model.ClaimBuilder;
+import dk.lyngby.model.User;
 import dk.lyngby.routes.Routes;
 import io.javalin.Javalin;
 import io.javalin.config.JavalinConfig;
@@ -11,6 +13,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
 import java.util.Properties;
 
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
@@ -25,12 +28,20 @@ public class ApplicationConfig {
         config.plugins.register(new RouteOverviewPlugin("/routes")); // enables route overview at /
         config.accessManager(ACCESS_MANAGER_HANDLER::accessManagerHandler);
     }
+    public static ClaimBuilder getClaimBuilder(User user, String roles) throws IOException {
+        return ClaimBuilder.builder()
+                .issuer(ApplicationConfig.getProperty("issuer"))
+                .audience(ApplicationConfig.getProperty("audience"))
+                .claimSet(Map.of("username", user.getUsername(), "roles", roles))
+                .expirationTime(Long.parseLong(ApplicationConfig.getProperty("token.expiration.time")))
+                .issueTime(3600000L)
+                .build();
+    }
 
     public static void startServer(Javalin app, int port) {
         Routes routes = new Routes();
         app.updateConfig(ApplicationConfig::configuration);
         app.routes(routes.getRoutes(app));
-        HibernateConfig.setTest(false);
         app.start(port);
     }
 

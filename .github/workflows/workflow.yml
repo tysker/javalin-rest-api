@@ -38,5 +38,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/javalinapi:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/<IMAGE_NAME>:<VERSION>
 

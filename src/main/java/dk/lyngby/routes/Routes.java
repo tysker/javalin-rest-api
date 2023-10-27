@@ -36,7 +36,7 @@ public class Routes {
             app.routes(() -> {
                 path("/", authRoutes.getRoutes());
                 path("/test" , () -> {
-                    get("/", ctx -> ctx.result("Hello from test"), Role.RoleName.ADMIN);
+                    get("/", ctx -> ctx.result("Hello from test"), Role.RoleName.ANYONE);
                 });
             });
 

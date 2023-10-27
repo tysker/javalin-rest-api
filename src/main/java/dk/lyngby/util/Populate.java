@@ -1,6 +1,7 @@
-package dk.lyngby.config;
+package dk.lyngby.util;
 
 
+import dk.lyngby.config.HibernateConfig;
 import dk.lyngby.model.Role;
 import dk.lyngby.model.User;
 import jakarta.persistence.EntityManagerFactory;
@@ -10,7 +11,7 @@ import java.util.Set;
 public class Populate {
     public static void main(String[] args) {
 
-        EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
+        EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory(false);
         createUserTestData(emf);
     }
     public static void createUserTestData(EntityManagerFactory emf) {

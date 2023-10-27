@@ -3,6 +3,7 @@ package dk.lyngby.controller.security;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import dk.lyngby.TokenFactory;
+import dk.lyngby.config.ApplicationConfig;
 import dk.lyngby.config.HibernateConfig;
 import dk.lyngby.dao.AuthDao;
 import dk.lyngby.dto.LoginDto;
@@ -15,20 +16,19 @@ import dk.lyngby.model.User;
 import io.javalin.http.Context;
 import jakarta.persistence.EntityManagerFactory;
 
-import java.util.Map;
+import java.io.IOException;
 import java.util.stream.Collectors;
 
 public class AuthController {
 
     private final AuthDao dao;
 
-    public AuthController() {
-        EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
+    public AuthController(){
+        EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory(false);
         this.dao = AuthDao.getInstance(emf);
     }
 
-
-    public void login(Context ctx) throws AuthorizationException, TokenException {
+    public void login(Context ctx) throws AuthorizationException, TokenException, IOException {
         // TODO: validate login request and credentials
         LoginDto loginDto = ctx.bodyAsClass(LoginDto.class);
         User user = dao.verifyUser(loginDto.username(), loginDto.password());
@@ -36,24 +36,16 @@ public class AuthController {
         // TODO: get roles from user and transform to a String like this: "[ADMIN, USER]"
         String roles = user.getRoleList().stream().map(role -> role.getRoleName().toString()).collect(Collectors.joining(", ", "[", "]"));
 
-        System.out.println(roles);
-        System.out.println(user.getUsername());
         // TODO: create token
-        ClaimBuilder claimBuilder = ClaimBuilder.builder()
-                .issuer("lyngby")
-                .audience("datamatiker")
-                .claimSet(Map.of("username", user.getUsername(), "roles", roles))
-                .expirationTime(3600000L)
-                .issueTime(3600000L)
-                .build();
+        ClaimBuilder claimBuilder = ApplicationConfig.getClaimBuilder(user, roles);
 
-        String token = TokenFactory.createToken(claimBuilder, "841D8A6C80CBA4FCAD32D5367C18C53B");
+        String token = TokenFactory.createToken(claimBuilder, ApplicationConfig.getProperty("secret.key"));
 
         ctx.status(200);
         ctx.json(createResponseObject(user.getUsername(), token));
     }
 
-    public void register(Context ctx) throws ApiException, TokenException {
+    public void register(Context ctx) throws ApiException, TokenException, IOException {
 
         // TODO: validate user
         RegisterDto registerDto = validateUser(ctx);
@@ -68,15 +60,9 @@ public class AuthController {
         String roles = registerDto.roleList().stream().collect(Collectors.joining(", ", "[", "]"));
 
         // TODO: create token
-        ClaimBuilder claimBuilder = ClaimBuilder.builder()
-                .issuer("lyngby")
-                .audience("datamatiker")
-                .claimSet(Map.of("username", registerDto.username(), "roles", roles))
-                .expirationTime(3600000L)
-                .issueTime(3600000L)
-                .build();
+        ClaimBuilder claimBuilder = ApplicationConfig.getClaimBuilder(new User(registerDto.username(), registerDto.password()), roles);
 
-        String token = TokenFactory.createToken(claimBuilder, "841D8A6C80CBA4FCAD32D5367C18C53B");
+        String token = TokenFactory.createToken(claimBuilder, ApplicationConfig.getProperty("secret.key"));
 
         ctx.status(201);
         ctx.json(createResponseObject(registerDto.username(), token));
