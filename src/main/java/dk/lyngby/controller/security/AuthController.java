@@ -42,7 +42,7 @@ public class AuthController {
         String token = TokenFactory.createToken(claimBuilder, ApplicationConfig.getProperty("secret.key"));
 
         ctx.status(200);
-        ctx.json(createResponseObject(user.getUsername(), token));
+        ctx.json(createResponseObject(user.getUsername(), roles, token));
     }
 
     public void register(Context ctx) throws ApiException, TokenException, IOException {
@@ -65,13 +65,14 @@ public class AuthController {
         String token = TokenFactory.createToken(claimBuilder, ApplicationConfig.getProperty("secret.key"));
 
         ctx.status(201);
-        ctx.json(createResponseObject(registerDto.username(), token));
+        ctx.json(createResponseObject(registerDto.username(), roles, token));
     }
 
-    private ObjectNode createResponseObject(String userName, String token) {
+    private ObjectNode createResponseObject(String userName, String roles, String token) {
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode respondNode = mapper.createObjectNode();
         respondNode.put("username", userName);
+        respondNode.put("roles", roles);
         respondNode.put("token", token);
         return respondNode;
     }

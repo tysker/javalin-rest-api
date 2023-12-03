@@ -17,17 +17,18 @@ import io.javalin.http.Handler;
 import io.javalin.security.RouteRole;
 
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public class AccessManagerController {
 
     public void accessManagerHandler(Handler handler, Context ctx, Set<? extends RouteRole> permittedRoles) throws Exception {
-
+        System.out.println(permittedRoles);
         String path = ctx.path();
         boolean isAuthorized = false;
 
-        if (path.equals("/api/v1/routes") || permittedRoles.contains(Role.RoleName.ANYONE)) {
+        if (path.equals("/api/v1/routes") || permittedRoles.contains(Role.RoleName.ANYONE) || Objects.equals(ctx.method().toString(), "OPTIONS")) {
             handler.handle(ctx);
             return;
         } else {

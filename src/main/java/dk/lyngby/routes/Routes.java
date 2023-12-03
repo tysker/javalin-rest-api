@@ -13,7 +13,8 @@ import org.hibernate.exception.ConstraintViolationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static io.javalin.apibuilder.ApiBuilder.*;
+import static io.javalin.apibuilder.ApiBuilder.get;
+import static io.javalin.apibuilder.ApiBuilder.path;
 
 public class Routes {
 
@@ -29,14 +30,14 @@ public class Routes {
         ctx.attribute("requestInfo", requestInfo);
     }
 
+
     public EndpointGroup getRoutes(Javalin app) {
         return () -> {
             app.before(this::requestInfoHandler);
-
             app.routes(() -> {
                 path("/", authRoutes.getRoutes());
-                path("/test" , () -> {
-                    get("/", ctx -> ctx.result("Hello from test"), Role.RoleName.ANYONE);
+                path("/test", () -> {
+                    get("/", ctx -> ctx.json("{\"msg\":\"Hello from test\"}"), Role.RoleName.ANYONE);
                 });
             });
 
@@ -46,7 +47,7 @@ public class Routes {
             app.exception(ValidationException.class, exceptionController::validationExceptionHandler);
             app.exception(ApiException.class, exceptionController::apiExceptionHandler);
             app.exception(AuthorizationException.class, exceptionController::exceptionHandlerNotAuthorized);
-            app.exception(TokenException.class,exceptionController::tokenExceptionHandler);
+            app.exception(TokenException.class, exceptionController::tokenExceptionHandler);
             app.exception(Exception.class, exceptionController::exceptionHandler);
 
         };
