@@ -18,8 +18,6 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          server-id: github
-          settings-path: 'src/main/resources/settings.xml'
       -
         name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
