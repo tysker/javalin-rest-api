@@ -98,11 +98,11 @@
             <version>0.4</version>
         </dependency>
 
-        <dependency>
-            <groupId>dk.lyngby</groupId>
-            <artifactId>token-dependency</artifactId>
-            <version>1.0.5</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>dk.lyngby</groupId>-->
+<!--            <artifactId>token-dependency</artifactId>-->
+<!--            <version>1.0.5</version>-->
+<!--        </dependency>-->
 
 
         <!--  Logging   -->
