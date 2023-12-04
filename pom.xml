@@ -44,7 +44,20 @@
 <!--        </repository>-->
 <!--    </repositories>-->
 
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://www.jitpack.io</url>
+        </repository>
+    </repositories>
+
     <dependencies>
+
+        <dependency>
+            <groupId>dk.lyngby</groupId>
+            <artifactId>token-dependency</artifactId>
+            <version>1.0.5</version>
+        </dependency>
 
         <!--  DB    -->
 
@@ -97,13 +110,6 @@
             <artifactId>jbcrypt</artifactId>
             <version>0.4</version>
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>dk.lyngby</groupId>-->
-<!--            <artifactId>token-dependency</artifactId>-->
-<!--            <version>1.0.5</version>-->
-<!--        </dependency>-->
-
 
         <!--  Logging   -->
 
