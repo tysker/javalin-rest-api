@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="token-dependency-1.0.5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../token-dependency-3sem/target/token-dependency-1.0.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
