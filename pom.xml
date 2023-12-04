@@ -30,19 +30,19 @@
         <db.connection.string>jdbc:postgresql://localhost:5432/</db.connection.string>
     </properties>
 
-<!--    <distributionManagement>-->
-<!--        <repository>-->
-<!--            <id>github</id>-->
-<!--            <url>https://maven.pkg.github.com/tysker/token-dependency</url>-->
-<!--        </repository>-->
-<!--    </distributionManagement>-->
+    <!--    <distributionManagement>-->
+    <!--        <repository>-->
+    <!--            <id>github</id>-->
+    <!--            <url>https://maven.pkg.github.com/tysker/token-dependency</url>-->
+    <!--        </repository>-->
+    <!--    </distributionManagement>-->
 
-<!--    <repositories>-->
-<!--        <repository>-->
-<!--            <id>github</id>-->
-<!--            <url>https://maven.pkg.github.com/tysker/token-dependency</url>-->
-<!--        </repository>-->
-<!--    </repositories>-->
+    <!--    <repositories>-->
+    <!--        <repository>-->
+    <!--            <id>github</id>-->
+    <!--            <url>https://maven.pkg.github.com/tysker/token-dependency</url>-->
+    <!--        </repository>-->
+    <!--    </repositories>-->
 
     <repositories>
         <repository>
