@@ -54,7 +54,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>dk.lyngby</groupId>
+            <groupId>dk.lyngby.tysker</groupId>
             <artifactId>token-dependency</artifactId>
             <version>1.0.5</version>
         </dependency>
