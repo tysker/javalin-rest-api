@@ -44,6 +44,7 @@ public class ApplicationConfig {
         app.options("/*", ApplicationConfig::corsConfig);
         app.routes(routes.getRoutes(app));
         app.start(port);
+        System.out.println("Server started on port: " + port);
     }
 
     public static void stopServer(Javalin app) {
