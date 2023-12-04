@@ -54,9 +54,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>dk.lyngby.tysker</groupId>
-            <artifactId>token-dependency</artifactId>
-            <version>1.0.5</version>
+            <groupId>com.github.tysker</groupId>
+            <artifactId>token-dependency-3sem</artifactId>
+            <version>main-SNAPSHOT</version>
         </dependency>
 
         <!--  DB    -->
