@@ -193,6 +193,7 @@
     </dependencies>
 
     <build>
+        <finalName>app</finalName> <!-- This is the name of the jar file -->
         <plugins>
             <!--  Pom.xml properties plugin  -->
 
