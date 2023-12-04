@@ -23,26 +23,12 @@
         <db.name>test</db.name>
         <audience>test</audience>
         <javalin.port>7070</javalin.port>
-        <db.username>postgres</db.username>
-        <db.password>postgres</db.password>
+        <db.username>dev</db.username>
+        <db.password>ax2</db.password>
         <token.expiration.time>3600000</token.expiration.time>
         <secret.key>841D8A6C80CBA4FCAD32D5367C18C53B</secret.key>
         <db.connection.string>jdbc:postgresql://localhost:5432/</db.connection.string>
     </properties>
-
-    <!--    <distributionManagement>-->
-    <!--        <repository>-->
-    <!--            <id>github</id>-->
-    <!--            <url>https://maven.pkg.github.com/tysker/token-dependency</url>-->
-    <!--        </repository>-->
-    <!--    </distributionManagement>-->
-
-    <!--    <repositories>-->
-    <!--        <repository>-->
-    <!--            <id>github</id>-->
-    <!--            <url>https://maven.pkg.github.com/tysker/token-dependency</url>-->
-    <!--        </repository>-->
-    <!--    </repositories>-->
 
     <repositories>
         <repository>
