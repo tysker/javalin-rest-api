@@ -2,8 +2,8 @@
 
 ## Swagger doumentations
 
- -[OpenApi Doc](https://app.swaggerhub.com/apis/tysker/javalinrestapi/1.0.0)
- -[Docker Image of the API](https://hub.docker.com/r/tyskerdocker/javalin-auth-api)
+ - [OpenApi Doc](https://app.swaggerhub.com/apis/tysker/javalinrestapi/1.0.0)
+ - [Docker Image of the API](https://hub.docker.com/r/tyskerdocker/javalin-auth-api)
 
 ## Description
 
