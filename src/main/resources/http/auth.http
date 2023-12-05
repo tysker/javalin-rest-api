@@ -3,9 +3,9 @@ POST {{url}}/auth/register
 Content-Type: application/json
 
 {
-  "username": "adminw",
+  "username": "adminss",
   "password": "admin123",
-  "roleList": ["ADMIN"]
+  "roleList": ["ADMIffN"]
 }
 
 > {% client.global.set("token", response.body.token); %}
@@ -60,8 +60,8 @@ POST {{url}}/auth/login
 Content-Type: application/json
 
 {
-  "username": "manager",
-  "password": "manager123"
+  "username": "testmanager",
+  "password": "manager"
 }
 
 > {% client.global.set("token", response.body.token); %}

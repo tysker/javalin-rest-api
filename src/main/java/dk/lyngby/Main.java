@@ -1,5 +1,7 @@
 package dk.lyngby;
 
+
+
 import dk.lyngby.config.ApplicationConfig;
 import io.javalin.Javalin;
 

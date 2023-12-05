@@ -31,13 +31,20 @@ public class AuthDao {
     public void registerUser(String username, String password, Set<String> roleList) {
         try (var em = emf.createEntityManager()) {
             em.getTransaction().begin();
+            // TODO: create user and add roles
             User user = new User(username, password);
             Set<Role> roles = user.getRoleList();
 
             for (String roleName : roleList) {
                 Role role = em.find(Role.class, Role.RoleName.valueOf(roleName));
-                if (role != null) roles.add(role);
+                if (role == null) {
+                    role = new Role(Role.RoleName.valueOf(roleName));
+                    em.persist(role);
+                }
+                roles.add(new Role(Role.RoleName.valueOf(roleName)));
             }
+
+            user.setRoleList(roles);
 
             em.persist(user);
             em.getTransaction().commit();
