@@ -1,9 +1,10 @@
 # JAVALIN R.E.S.T API
 
-## Swagger doumentations
-
+### Swagger OpenApi Documentation
  - [OpenApi Doc](https://app.swaggerhub.com/apis/tysker/javalinrestapi/1.0.0)
- - [Docker Image of the API](https://hub.docker.com/r/tyskerdocker/javalin-auth-api)
+
+### Docker Image Of The Reta Api
+ - [Docker Image](https://hub.docker.com/r/tyskerdocker/javalin-auth-api)
 
 ## Description
 
