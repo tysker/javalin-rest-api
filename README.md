@@ -1,5 +1,11 @@
 # JAVALIN R.E.S.T API
 
+### Swagger OpenApi Documentation
+ - [OpenApi Doc](https://app.swaggerhub.com/apis/tysker/javalinrestapi/1.0.0)
+
+### Docker Image Of The Reta Api
+ - [Docker Image](https://hub.docker.com/r/tyskerdocker/javalin-auth-api)
+
 ## Description
 
 This is a simple REST API that allows you to create, read, update and delete;
