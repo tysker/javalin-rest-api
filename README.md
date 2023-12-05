@@ -1,5 +1,9 @@
 # JAVALIN R.E.S.T API
 
+## Swagger doumentations
+ -[OpenApi Doc](https://app.swaggerhub.com/apis/tysker/javalinrestapi/1.0.0)
+ -[Docker Image of the API]()
+
 ## Description
 
 This is a simple REST API that allows you to create, read, update and delete;
