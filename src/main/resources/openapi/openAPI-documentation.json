@@ -1,0 +1,201 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Authentication API with Javalin and JWT",
+    "description": "This is a simple Rest API",
+    "contact": {
+      "email": "jorg@cphbusiness.dk"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:7070/api/v1",
+      "description": "Local server",
+      "variables": {
+        "port": {
+          "default": "7070",
+          "description": "Port number"
+        }
+      }
+    },
+    {
+      "url": "https://your-domain/api/v1",
+      "description": "Production server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "auth",
+      "description": "Auth endpoints"
+    },
+    {
+      "name": "test",
+      "description": "Test endpoint"
+    }
+  ],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Register a user",
+        "description": "Register a user",
+        "requestBody": {
+          "description": "Register a new user",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterUserResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "User already exists"
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Login a user",
+        "description": "Login a user",
+        "operationId": "addInventory",
+        "requestBody": {
+          "description": "Login a user",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterUserResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid user name or password"
+          }
+        }
+      }
+    },
+    "/test": {
+      "get": {
+        "tags": [
+          "test"
+        ],
+        "summary": "Test endpoint",
+        "description": "Test endpoint",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "Hello World"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "RegisterUserRequest": {
+        "required": [
+          "username",
+          "password",
+          "roles"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "Steve Jobs"
+          },
+          "password": {
+            "type": "string",
+            "example": "1234"
+          },
+          "roleList": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "ADMIN"
+            }
+          }
+        }
+      },
+      "RegisterUserResponse": {
+        "required": [
+          "username",
+          "roles",
+          "token"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "Steve Jobs"
+          },
+          "roleList": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "ADMIN"
+            }
+          },
+          "token": {
+            "type": "string",
+            "example": "eyJhbGUzI1NiJ9.eyJzdWIimV4cCI6MTYy.MjQ0NwNiwia"
+          }
+        }
+      },
+      "LoginUserRequest": {
+        "required": [
+          "username",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "Steve Jobs"
+          },
+          "password": {
+            "type": "string",
+            "example": "1234"
+          }
+        }
+      }
+    }
+  }
+}
