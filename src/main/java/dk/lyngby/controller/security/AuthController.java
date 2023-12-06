@@ -12,11 +12,13 @@ import dk.lyngby.exception.ApiException;
 import dk.lyngby.exception.AuthorizationException;
 import dk.lyngby.exceptions.TokenException;
 import dk.lyngby.model.ClaimBuilder;
+import dk.lyngby.model.Role;
 import dk.lyngby.model.User;
 import io.javalin.http.Context;
 import jakarta.persistence.EntityManagerFactory;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class AuthController {
@@ -32,17 +34,15 @@ public class AuthController {
         // TODO: validate login request and credentials
         LoginDto loginDto = ctx.bodyAsClass(LoginDto.class);
         User user = dao.verifyUser(loginDto.username(), loginDto.password());
-
-        // TODO: get roles from user and transform to a String like this: "[ADMIN, USER]"
-        String roles = user.getRoleList().stream().map(role -> role.getRoleName().toString()).collect(Collectors.joining(", ", "[", "]"));
-
+        // TODO: Create a array of roles
+        List<Role.RoleName> roleList = user.getRoleList().stream().map(Role::getRoleName).toList().stream().toList();
         // TODO: create token
-        ClaimBuilder claimBuilder = ApplicationConfig.getClaimBuilder(user, roles);
+        ClaimBuilder claimBuilder = ApplicationConfig.getClaimBuilder(user, roleList.toString());
 
         String token = TokenFactory.createToken(claimBuilder, ApplicationConfig.getProperty("secret.key"));
 
         ctx.status(200);
-        ctx.json(createResponseObject(user.getUsername(), roles, token));
+        ctx.json(createResponseObject(user.getUsername(), roleList, token));
     }
 
     public void register(Context ctx) throws ApiException, TokenException, IOException {
@@ -55,24 +55,22 @@ public class AuthController {
         dao.checkRoles(registerDto.roleList());
         // TODO: register user
         dao.registerUser(registerDto.username(), registerDto.password(), registerDto.roleList());
-
-        // TODO: get roles from user and transform to a String like this: "[ADMIN, USER]"
-        String roles = registerDto.roleList().stream().collect(Collectors.joining(", ", "[", "]"));
-
+        // TODO: Create a array of roles
+        List<Role.RoleName> roleList = registerDto.roleList().stream().map(Role.RoleName::valueOf).toList().stream().toList();
         // TODO: create token
-        ClaimBuilder claimBuilder = ApplicationConfig.getClaimBuilder(new User(registerDto.username(), registerDto.password()), roles);
+        ClaimBuilder claimBuilder = ApplicationConfig.getClaimBuilder(new User(registerDto.username(), registerDto.password()), roleList.toString());
 
         String token = TokenFactory.createToken(claimBuilder, ApplicationConfig.getProperty("secret.key"));
 
         ctx.status(201);
-        ctx.json(createResponseObject(registerDto.username(), roles, token));
+        ctx.json(createResponseObject(registerDto.username(), roleList, token));
     }
 
-    private ObjectNode createResponseObject(String userName, String roles, String token) {
+    private ObjectNode createResponseObject(String userName, List<Role.RoleName> roles, String token) {
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode respondNode = mapper.createObjectNode();
         respondNode.put("username", userName);
-        respondNode.put("roles", roles);
+        respondNode.putPOJO("roles", roles);
         respondNode.put("token", token);
         return respondNode;
     }
