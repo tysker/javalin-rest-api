@@ -10,7 +10,7 @@ import static io.javalin.apibuilder.ApiBuilder.post;
 public class AuthRoute {
     private final AuthController userController = new AuthController();
 
-    protected EndpointGroup getRoutes() {
+    public EndpointGroup getRoutes() {
 
         return () -> {
             path("/auth", () -> {

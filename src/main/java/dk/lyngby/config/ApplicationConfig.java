@@ -1,14 +1,21 @@
 package dk.lyngby.config;
 
+import dk.lyngby.controller.exceptions.ExceptionController;
 import dk.lyngby.controller.security.AccessManagerController;
+import dk.lyngby.exception.ApiException;
+import dk.lyngby.exception.AuthorizationException;
+import dk.lyngby.exceptions.TokenException;
 import dk.lyngby.model.ClaimBuilder;
+import dk.lyngby.model.Role;
 import dk.lyngby.model.User;
+import dk.lyngby.routes.AuthRoute;
 import dk.lyngby.routes.Routes;
 import io.javalin.Javalin;
 import io.javalin.config.JavalinConfig;
 import io.javalin.http.Context;
-import io.javalin.plugin.bundled.RouteOverviewPlugin;
+import io.javalin.validation.ValidationException;
 import lombok.NoArgsConstructor;
+import org.hibernate.exception.ConstraintViolationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,32 +24,65 @@ import java.io.InputStream;
 import java.util.Map;
 import java.util.Properties;
 
+import static io.javalin.apibuilder.ApiBuilder.get;
+import static io.javalin.apibuilder.ApiBuilder.path;
+
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class ApplicationConfig {
 
     private static final AccessManagerController ACCESS_MANAGER_HANDLER = new AccessManagerController();
+    private static final ExceptionController exceptionController = new ExceptionController();
     private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationConfig.class);
+    private static final Routes routes = new Routes();
+    private static int count = 0;
 
     private static void configuration(JavalinConfig config) {
-        config.routing.contextPath = "/api/v1"; // base path for all routes
+        config.router.contextPath = "/api/v1"; // base path for all routes
         config.http.defaultContentType = "application/json"; // default content type for requests
-        config.plugins.register(new RouteOverviewPlugin("/routes")); // enables route overview at /
-        config.accessManager(ACCESS_MANAGER_HANDLER::accessManagerHandler);
+        config.bundledPlugins.enableRouteOverview("/routes", Role.RoleName.ANYONE); // enables route overview at /routes
+        config.router.apiBuilder(ApplicationConfig.routes.getRoutes()); // register routes
     }
 
-    public static void corsConfig(Context ctx) {
+    public static void corsHeaders(Context ctx) {
         ctx.header("Access-Control-Allow-Origin", "*");
         ctx.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
         ctx.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
         ctx.header("Access-Control-Allow-Credentials", "true");
     }
 
-    public static void startServer(Javalin app, int port) {
-        Routes routes = new Routes();
-        app.updateConfig(ApplicationConfig::configuration);
-        app.before(ApplicationConfig::corsConfig);
-        app.options("/*", ApplicationConfig::corsConfig);
-        app.routes(routes.getRoutes(app));
+    private static void requestInfoHandler(Context ctx) {
+        String requestInfo = ctx.req().getMethod() + " " + ctx.req().getRequestURI();
+        ctx.attribute("requestInfo", requestInfo);
+    }
+
+    public static void beforeContext(Javalin app){
+        app.before(ApplicationConfig::requestInfoHandler);
+        app.before(ApplicationConfig::corsHeaders);
+    }
+
+    public static void afterContext(Javalin app){
+        app.after(ctx -> LOGGER.info(" Request {} - {} was handled with status code {}", count++, ctx.attribute("requestInfo"), ctx.status()));
+    }
+
+    public static void exceptionContext(Javalin app){
+        app.exception(ConstraintViolationException.class, exceptionController::constraintViolationExceptionHandler);
+        app.exception(ValidationException.class, exceptionController::validationExceptionHandler);
+        app.exception(ApiException.class, exceptionController::apiExceptionHandler);
+        app.exception(AuthorizationException.class, exceptionController::exceptionHandlerNotAuthorized);
+        app.exception(TokenException.class, exceptionController::tokenExceptionHandler);
+        app.exception(Exception.class, exceptionController::exceptionHandler);
+    }
+
+    public static void startServer(int port) {
+        var app = Javalin.create(ApplicationConfig::configuration);
+
+        app.beforeMatched(ACCESS_MANAGER_HANDLER::accessManagerHandler);
+
+
+        app.options("/*", ApplicationConfig::corsHeaders);
+        beforeContext(app);
+        exceptionContext(app);
+        afterContext(app);
         app.start(port);
     }
 
