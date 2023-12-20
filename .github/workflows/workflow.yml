@@ -1,7 +1,7 @@
 name: API JAVALIN WORKFLOW
 on:
   push:
-    branches: [ main ]
+    branches: [ main, migrate-from-v5-to-v6]
   pull_request:
     branches: [ main ]
 jobs:
@@ -38,5 +38,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/javalin-auth-api:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/javalin-auth-api:v6
 
