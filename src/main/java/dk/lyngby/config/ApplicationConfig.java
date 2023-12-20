@@ -8,7 +8,6 @@ import dk.lyngby.exceptions.TokenException;
 import dk.lyngby.model.ClaimBuilder;
 import dk.lyngby.model.Role;
 import dk.lyngby.model.User;
-import dk.lyngby.routes.AuthRoute;
 import dk.lyngby.routes.Routes;
 import io.javalin.Javalin;
 import io.javalin.config.JavalinConfig;
@@ -25,12 +24,11 @@ import java.util.Map;
 import java.util.Properties;
 
 import static io.javalin.apibuilder.ApiBuilder.get;
-import static io.javalin.apibuilder.ApiBuilder.path;
 
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class ApplicationConfig {
 
-    private static final AccessManagerController ACCESS_MANAGER_HANDLER = new AccessManagerController();
+    private static final AccessManagerController accessManagerController = new AccessManagerController();
     private static final ExceptionController exceptionController = new ExceptionController();
     private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationConfig.class);
     private static final Routes routes = new Routes();
@@ -75,10 +73,7 @@ public class ApplicationConfig {
 
     public static void startServer(int port) {
         var app = Javalin.create(ApplicationConfig::configuration);
-
-        app.beforeMatched(ACCESS_MANAGER_HANDLER::accessManagerHandler);
-
-
+        app.beforeMatched(accessManagerController::accessManagerHandler);
         app.options("/*", ApplicationConfig::corsHeaders);
         beforeContext(app);
         exceptionContext(app);

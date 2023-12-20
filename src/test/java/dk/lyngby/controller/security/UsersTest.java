@@ -23,17 +23,16 @@ public class UsersTest {
         LoginUtil.createTestUsers(emfTest);
 
         // Start server
-//        app = Javalin.create();
         ApplicationConfig.startServer(7777);
 
         adminToken = LoginUtil.getAdminToken();
 
     }
 
-    @AfterAll
-    static void afterAll() {
-        ApplicationConfig.stopServer(app);
-    }
+//    @AfterAll
+//    static void afterAll() {
+//        ApplicationConfig.stopServer(app);
+//    }
 
     @Test
     public void test() {
