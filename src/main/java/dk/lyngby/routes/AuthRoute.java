@@ -8,14 +8,14 @@ import static io.javalin.apibuilder.ApiBuilder.path;
 import static io.javalin.apibuilder.ApiBuilder.post;
 
 public class AuthRoute {
-    private final AuthController userController = new AuthController();
+    private final AuthController authController = new AuthController();
 
     public EndpointGroup getRoutes() {
 
         return () -> {
             path("/auth", () -> {
-                post("/login", userController::login, Role.RoleName.ANYONE);
-                post("/register", userController::register, Role.RoleName.ANYONE);
+                post("/login", authController::login, Role.RoleName.ANYONE);
+                post("/register", authController::register, Role.RoleName.ANYONE);
             });
         };
     }

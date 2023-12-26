@@ -23,9 +23,15 @@ import java.util.stream.Collectors;
 public class AccessManagerController {
 
     public void accessManagerHandler(Context ctx) throws Exception {
-        String path = ctx.path();
 
-        if (!ctx.routeRoles().contains(Role.RoleName.ANYONE) && !Objects.equals(ctx.method().toString(), "OPTIONS")) {
+//        if (ctx.routeRoles().isEmpty()) { // route roles can only be attached to endpoint handlers
+//            return; // if there are no route roles, we don't need to check anything
+//        }
+
+        System.out.println(ctx.routeRoles());
+        System.out.println(ctx.method().toString());
+
+        if (!ctx.routeRoles().contains(Role.RoleName.ANYONE)) {
             boolean isAuthorized = false;
 
             Role.RoleName[] userRoles = getUserRoles(ctx);
@@ -43,7 +49,7 @@ public class AccessManagerController {
         }
     }
 
-    private Role.RoleName[] getUserRoles(Context ctx) throws TokenException, ApiException, IOException {
+    private Role.RoleName[] getUserRoles(Context ctx) throws TokenException {
 
         AuthDao authDao = AuthDao.getInstance(HibernateConfig.getEntityManagerFactory(false));
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

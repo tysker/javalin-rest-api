@@ -23,8 +23,6 @@ import java.io.InputStream;
 import java.util.Map;
 import java.util.Properties;
 
-import static io.javalin.apibuilder.ApiBuilder.get;
-
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class ApplicationConfig {
 
@@ -37,8 +35,12 @@ public class ApplicationConfig {
     private static void configuration(JavalinConfig config) {
         config.router.contextPath = "/api/v1"; // base path for all routes
         config.http.defaultContentType = "application/json"; // default content type for requests
+
+        // Plugins
         config.bundledPlugins.enableRouteOverview("/routes", Role.RoleName.ANYONE); // enables route overview at /routes
+        config.bundledPlugins.enableDevLogging();
         config.router.apiBuilder(ApplicationConfig.routes.getRoutes()); // register routes
+        config.useVirtualThreads = true;
     }
 
     public static void corsHeaders(Context ctx) {
