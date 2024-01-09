@@ -3,32 +3,44 @@ package dk.lyngby.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.List;
+import java.util.Objects;
 
-@NoArgsConstructor
-@Getter
-@ToString
 @Entity
 @Table(name = "roles")
-public class Role {
+@NamedQueries(@NamedQuery(name = "Role.deleteAllRows", query = "DELETE from Role"))
+@Getter
+@NoArgsConstructor
+public class Role implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "role_name", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private RoleName roleName;
+    @Basic(optional = false)
+    @Column(name = "role_name", length = 20)
+    private String roleName;
 
     @ManyToMany(mappedBy = "roleList")
-    @ToString.Exclude
-    private Set<User> userList = new HashSet<>();
+    private List<User> userList;
 
-    public Role(RoleName roleName) {
+    public Role(String roleName) {
         this.roleName = roleName;
     }
 
-    public enum RoleName implements io.javalin.security.RouteRole{
-        USER, SUPERVISOR, ADMIN, MANAGER, ANYONE;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Role role = (Role) o;
+        return Objects.equals(roleName, role.roleName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(roleName);
     }
 }

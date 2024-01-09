@@ -5,80 +5,54 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dk.lyngby</groupId>
-    <artifactId>javalin-rest-api-3sem</artifactId>
-    <version>1.0.0</version>
-
+    <artifactId>3sem-javalin-rest-api</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <hibernate-version>6.2.4.Final</hibernate-version>
-        <restassured.version>5.3.2</restassured.version>
-        <testcontainers.version>1.18.0</testcontainers.version>
         <junit.version>5.9.1</junit.version>
+        <restassured.version>5.3.0</restassured.version>
+        <hibernate-version>6.2.4.Final</hibernate-version>
+        <testcontainers.version>1.18.0</testcontainers.version>
 
-        <issuer>test</issuer>
-        <db.name>testdb</db.name>
-        <audience>test</audience>
+        <db.name>projectdb</db.name>
+        <db.username>dev</db.username>
+        <db.password>ax2</db.password>
+        <issuer>cphbusiness.dk</issuer>
         <javalin.port>7070</javalin.port>
-        <db.username>postgres</db.username>
-        <db.password>postgres</db.password>
         <token.expiration.time>3600000</token.expiration.time>
         <secret.key>841D8A6C80CBA4FCAD32D5367C18C53B</secret.key>
         <db.connection.string>jdbc:postgresql://localhost:5432/</db.connection.string>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://www.jitpack.io</url>
-        </repository>
-    </repositories>
-
     <dependencies>
 
-        <dependency>
-            <groupId>com.github.tysker</groupId>
-            <artifactId>token-dependency-3sem</artifactId>
-            <version>main-SNAPSHOT</version>
-        </dependency>
-
-        <!--  DB    -->
-
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.6.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.orm</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>${hibernate-version}</version>
-        </dependency>
-
-        <!--  Utilities      -->
+        <!--   R.E.S.T     -->
 
         <dependency>
             <groupId>io.javalin</groupId>
-            <artifactId>javalin</artifactId>
-            <version>5.6.3</version>
+            <artifactId>javalin-bundle</artifactId>
+            <version>5.6.0</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.15.0</version>
         </dependency>
+
+        <!--  Utilities      -->
         <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-jsr310</artifactId>
-            <version>2.15.2</version>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.30</version>
+            <version>1.18.28</version>
             <scope>provided</scope>
         </dependency>
 
@@ -95,6 +69,31 @@
             <groupId>org.mindrot</groupId>
             <artifactId>jbcrypt</artifactId>
             <version>0.4</version>
+        </dependency>
+
+        <!--  DB    -->
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate-version}</version>
+        </dependency>
+        <dependency>
+            <!--   Hibernate Connection Pool      -->
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>5.0.1</version>
+        </dependency>
+        <dependency>
+            <!--   Hibernate Connection Pool      -->
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-hikaricp</artifactId>
+            <version>${hibernate-version}</version>
         </dependency>
 
         <!--  Logging   -->
@@ -165,6 +164,18 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.3.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>4.6.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>${restassured.version}</version>
@@ -180,25 +191,6 @@
 
     <build>
         <finalName>app</finalName> <!-- This is the name of the jar file -->
-
-        <!--  Those two plugins below are plugins for another plugin used in the project.
-        They created conflicts for the shade plugin, so I changed the plugin version to another
-        version that didn't conflict with the shade plugin      -->
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.11.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.3.1</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-
         <plugins>
 
             <!--  Pom.xml properties plugin  -->
@@ -207,7 +199,7 @@
                 <!--  https://www.baeldung.com/java-accessing-maven-properties  -->
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>properties-maven-plugin</artifactId>
-                <version>1.2.1</version>
+                <version>1.0.0</version>
                 <executions>
                     <execution>
                         <phase>generate-resources</phase>
@@ -234,14 +226,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.4.1</version>
                 <configuration>
                     <transformers>
                         <transformer
                                 implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>
-                                dk/lyngby/Main <!-- Here you should put the main class of your application -->
-                            </mainClass>
+                            <mainClass>dk/lyngby/Main
+                            </mainClass> <!-- Here you should put the main class of your application -->
                         </transformer>
                     </transformers>
                     <filters>
@@ -252,17 +243,6 @@
                                 <exclude>META-INF/*.SF</exclude>
                                 <exclude>META-INF/*.DSA</exclude>
                                 <exclude>META-INF/*.RSA</exclude>
-                                <exclude>META-INF/LICENSE.txt</exclude>
-                                <exclude>META-INF/LICENSE.md</exclude>
-                                <exclude>META-INF/LICENSE</exclude>
-                                <exclude>META-INF/NOTICE.md</exclude>
-                                <exclude>META-INF/NOTICE.txt</exclude>
-                                <exclude>META-INF/NOTICE</exclude>
-                                <exclude>META-INF/MANIFEST.MF</exclude>
-                                <exclude>META-INF/services/java.sql.Driver</exclude>
-                                <exclude>META-INF/versions/9/module-info.class</exclude>
-                                <exclude>META-INF/services/org.eclipse.jetty.webapp.Configuration</exclude>
-                                <exclude>META-INF/services/jakarta.servlet.ServletContainerInitializer</exclude>
                             </excludes>
                         </filter>
                     </filters>
@@ -278,5 +258,31 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
+
+        <!--
+        The maven-shade-plugin is a plugin for Apache Maven, which is a popular build automation tool primarily used for Java
+        projects. The maven-shade-plugin is specifically designed to create an executable uber-JAR or fat JAR, which is a JAR
+        file that contains all the dependencies required to run an application.
+
+        In the provided code snippet, the maven-shade-plugin is configured within the <plugins> section of the Maven build
+        configuration. It has a <groupId> of org.apache.maven.plugins, an <artifactId> of maven-shade-plugin,
+        and a <version> of 3.4.1.
+
+        The plugin is configured using the <configuration> element within the <plugin> block. The <transformers> section
+        specifies a transformer that will be used to modify the resources within the JAR file. In this case,
+        the ManifestResourceTransformer implementation is used to set the main class for the application. The <mainClass>
+        element specifies the fully qualified name of the main class that should be executed when the JAR is launched.
+
+        The <filters> section defines filters that can be used to exclude certain resources from the shaded JAR. In the given
+        configuration, a filter is specified to exclude certain files (*.SF, *.DSA, and *.RSA) from the META-INF directory.
+        This filter is added to avoid a bug in the shade plugin.
+
+        The <executions> section defines the plugin execution configuration. In this case, the plugin is executed during the
+        package phase of the Maven build lifecycle. The <goals> element specifies that the shade goal should be executed, which
+        triggers the creation of the shaded JAR file.
+
+        Overall, the maven-shade-plugin is used to create a self-contained JAR file that includes all the dependencies required
+        to run an application. This can be useful in situations where you want to distribute your application as a single JAR
+        file that can be easily executed without relying on external dependencies.
+        -->

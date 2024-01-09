@@ -3,8 +3,8 @@ POST {{url}}auth/register
 Content-Type: application/json
 
 {
-  "username": "admin11",
-  "password": "admin11",
+  "username": "admin",
+  "password": "admin",
   "role": "admin"
 }
 
@@ -18,16 +18,6 @@ Content-Type: application/json
   "username": "user",
   "password": "user",
   "role": "user"
-}
-
-### Register user_manager/manager
-POST {{url}}auth/register
-Content-Type: application/json
-
-{
-  "username": "steve",
-  "password": "user_manager",
-  "role": "manager"
 }
 
 > {% client.global.set("token", response.body.token); %}
@@ -49,18 +39,43 @@ Content-Type: application/json
 
 {
   "username": "user",
-  "password": "user123"
-}
-
-### Login as manager
-POST {{url}}auth/login
-Content-Type: application/json
-
-{
-  "username": "user_manager",
-  "password": "user_manager"
+  "password": "user"
 }
 
 > {% client.global.set("token", response.body.token); %}
 
 ###
+GET {{url}}person
+Authorization: Bearer {{token}}
+
+###
+GET {{url}}person/1
+Authorization: Bearer {{token}}
+
+###
+DELETE {{url}}person/6
+Authorization: Bearer {{token}}
+
+###
+POST {{url}}person
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "firstName": "Karl",
+    "lastName": "Hansen",
+    "age": "55",
+    "email": "karl@mail.com"
+}
+
+###
+PUT {{url}}person/5
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "firstName": "Karl",
+  "lastName": "HansenData",
+  "age": "55",
+  "email": "karl@mail.com"
+}

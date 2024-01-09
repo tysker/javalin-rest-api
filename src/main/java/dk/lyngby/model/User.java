@@ -4,54 +4,64 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.mindrot.jbcrypt.BCrypt;
-
-import java.util.HashSet;
-import java.util.Objects;
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
-@NoArgsConstructor
-@Getter
 @Entity
 @Table(name = "users")
-public class User {
+@NamedQueries(@NamedQuery(name = "User.deleteAllRows", query = "DELETE from User"))
+@Getter
+@NoArgsConstructor
+public class User implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "user_name", nullable = false, unique = true)
+    @Basic(optional = false)
+    @Column(name = "user_name", length = 25)
     private String username;
-
-    @Column(name = "user_password", nullable = false)
-    private String password;
-
+    @Basic(optional = false)
+    @Column(name = "user_password", length = 255, nullable = false)
+    private String userPassword;
     @JoinTable(name = "user_roles", joinColumns = {
             @JoinColumn(name = "user_name", referencedColumnName = "user_name")}, inverseJoinColumns = {
             @JoinColumn(name = "role_name", referencedColumnName = "role_name")})
     @ManyToMany(fetch = FetchType.EAGER)
-    private Set<Role> roleList = new HashSet<>();
+    private Set<Role> roleList = new LinkedHashSet<>();
 
-    public User(String username, String password) {
+    public User(String username, String userPassword) {
         this.username = username;
-        this.password = BCrypt.hashpw(password, BCrypt.gensalt());
+        this.userPassword = BCrypt.hashpw(userPassword, BCrypt.gensalt());
     }
 
+    public Set<String> getRolesAsStrings() {
+        if (roleList.isEmpty()) {
+            return null;
+        }
+        Set<String> rolesAsStrings = new LinkedHashSet<>();
+        roleList.forEach((role) -> {
+            rolesAsStrings.add(role.getRoleName());
+        });
+        return rolesAsStrings;
+    }
     public boolean verifyPassword(String pw) {
-        return BCrypt.checkpw(pw, password);
+        return BCrypt.checkpw(pw, userPassword);
     }
 
-    public void setRoleList(Set<Role> roleList) {
-        if(roleList == null) return;
-        roleList.forEach(role -> role.getUserList().add(this));
-        this.roleList = roleList;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = BCrypt.hashpw(userPassword, BCrypt.gensalt());
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User user)) return false;
-        return Objects.equals(username, user.username);
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(username);
+    public void addRole(Role userRole) {
+        roleList.add(userRole);
     }
+
+    public Set<Role> getRoleList() {return roleList;}
 }

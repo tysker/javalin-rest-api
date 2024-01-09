@@ -1,11 +1,5 @@
 # JAVALIN R.E.S.T API
 
-### Swagger OpenApi Documentation
- - [OpenApi Doc](https://app.swaggerhub.com/apis/tysker/javalinrestapi/1.0.0)
-
-### Docker Image Of The Reta Api
- - [Docker Image](https://hub.docker.com/r/tyskerdocker/javalin-auth-api)
-
 ## Description
 
 This is a simple REST API that allows you to create, read, update and delete;
@@ -14,9 +8,9 @@ This project is part of a bigger project that allows for development of an API a
 
 The setup is based on the following two repositories:
 1. [Local Environment Setup (development)](https://github.com/tysker/3sem-traefik-setup-local)
-    - Includes a local docker-compose setup with a PostgresSQL database and PgAdmin.
+   - Includes a local docker-compose setup with a PostgresSQL database and PgAdmin.
 2. [Remote Environment Setup (DigitalOcean - production)](https://github.com/tysker/3sem-traefik-setup-remote)
-    - Includes a remote docker-compose setup with PostgresSQL database, Traefik (certificates, load balancer, reverse proxy) and watchtower (auto updates of docker images).
+   - Includes a remote docker-compose setup with PostgresSQL database, Traefik (certificates, load balancer, reverse proxy) and watchtower (auto updates of docker images).
 
 You can read more about the setup in the repositories above.
 
@@ -44,26 +38,58 @@ You can read more about the setup in the repositories above.
 - Git
 - Postman (Optional)
 
-### Before you start
+### Deployment CI pipeline
 
+1. Change docker image name in GitHub actions file
 
-1. Update the pom file with the right properties
-
-```xml
-
-<properties>
-    <issuer>your domain</issuer>
-    <db.name>database name</db.name>
-    <javalin.port>port number</javalin.port>
-    <secret.key>your secret key</secret.key>
-    <db.username>database username</db.username>
-    <db.password>database password</db.password>
-    <token.expiration.time>3600000</token.expiration.time>
-    <db.connection.string>jdbc:postgresql://localhost:5432/</db.connection.string>
-</properties>
+```yaml
+        ......
+        
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/<your_api_name>:latest
 ```
 
-2. Testcontainers
+2. Make sure yoy have the following secrets in your GitHub repository
+
+- DOCKERHUB_USERNAME
+- DOCKERHUB_TOKEN
+
+3. Update the GitHub action file to match your branch name you want to build on
+
+```yaml
+on:
+  push:
+    branches: [ branches_to_build ]
+
+    ......
+```
+
+4. Update the pom file with the right properties
+
+```xml
+    <properties>
+        
+        ....
+    
+        <!-- Project properties  -->
+        <!--  token    -->
+        <secret.key>your secret key</secret.key>
+        <issuer>your domain</issuer>
+        <token.expiration.time>3600000</token.expiration.time>
+        <!--  DB    -->
+        <db.name>database name</db.name>
+        <db.username>database username</db.username>
+        <db.password>database password</db.password>
+        <db.connection.string>jdbc:postgresql://localhost:5432/</db.connection.string>
+        <!--  Javalin    -->
+        <javalin.port>port number</javalin.port>
+    </properties>
+```
+
+5. Testcontainers
 
 We are using Testcontainers to run integration tests against a real database. The testcontainers are configured in
 the HibernateConfig file under the config folder. The configuration is based on the following properties:
@@ -79,8 +105,8 @@ the HibernateConfig file under the config folder. The configuration is based on 
     .....
 
 ```
+**For Mac users with M1 and M2 chips has to make some changes to the HibernateConfig file**
 
-3. For Mac users with M1 and M2 chips has to make some changes to the HibernateConfig file
 
 Do the following to get the Testcontainers up and running:
 
@@ -93,3 +119,17 @@ Do the following to get the Testcontainers up and running:
     # Symlink
     sudo ln -s $HOME/.docker/run/docker.sock /var/run/docker.sock
 ```
+
+***
+
+## API Documentation
+
+### API Endpoints
+
+<img src="images/routes.png" alt="API endpoints">
+
+***
+
+### DTO (Data Transfer Object) and Entity Flow
+
+<img src="images/dto_flow.png" alt="DTO Flow">
