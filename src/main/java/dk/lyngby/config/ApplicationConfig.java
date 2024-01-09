@@ -20,14 +20,14 @@ import java.util.Properties;
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class ApplicationConfig {
 
-    private static final AccessManagerController ACCESS_MANAGER_HANDLER = new AccessManagerController();
+    private static final AccessManagerController accessManagerController = new AccessManagerController();
     private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationConfig.class);
 
     private static void configuration(JavalinConfig config) {
         config.routing.contextPath = "/api/v1"; // base path for all routes
         config.http.defaultContentType = "application/json"; // default content type for requests
         config.plugins.register(new RouteOverviewPlugin("/routes")); // enables route overview at /
-        config.accessManager(ACCESS_MANAGER_HANDLER::accessManagerHandler);
+        config.accessManager(accessManagerController::accessManagerHandler);
     }
 
     public static void corsConfig(Context ctx) {
