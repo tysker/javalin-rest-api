@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dk.lyngby</groupId>
-    <artifactId>javalin-rest-api-3sem</artifactId>
+    <artifactId>3sem-javalin-rest-api</artifactId>
     <version>1.0.0</version>
 
 
@@ -16,7 +16,7 @@
 
         <hibernate-version>6.2.4.Final</hibernate-version>
         <restassured.version>5.3.2</restassured.version>
-        <testcontainers.version>1.18.0</testcontainers.version>
+        <testcontainers.version>1.19.5</testcontainers.version>
         <junit.version>5.9.1</junit.version>
 
         <issuer>test</issuer>
