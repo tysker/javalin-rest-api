@@ -19,7 +19,6 @@ public class AuthDao {
     }
 
     public static AuthDao getInstance(EntityManagerFactory _emf) {
-
         synchronized (AuthDao.class) {
             if (instance == null) {
                 instance = new AuthDao(_emf);

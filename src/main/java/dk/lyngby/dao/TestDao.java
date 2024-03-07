@@ -1,46 +1,23 @@
 package dk.lyngby.dao;
 
+import dk.lyngby.model.Person;
 import jakarta.persistence.EntityManagerFactory;
 
 import java.util.List;
 
-public class TestDao extends Dao<String, Integer> {
-
+public class TestDao extends CrudDao<Person, Integer> {
 
     public static TestDao instance;
-    private TestDao(EntityManagerFactory emf) {
-        super(emf);
+
+    private TestDao(boolean isTest) {
+        super(isTest);
     }
 
-    public static TestDao getInstance(EntityManagerFactory emf) {
-        if(instance == null) {
-            instance = new TestDao(emf);
+    public static TestDao getInstance(boolean isTest) {
+        if (instance == null) {
+            instance = new TestDao(isTest);
         }
         return instance;
     }
 
-    @Override
-    public List<String> getAll() {
-        return null;
-    }
-
-    @Override
-    public String get(Integer id) {
-        return null;
-    }
-
-    @Override
-    public void create(String s) {
-
-    }
-
-    @Override
-    public void update(String s) {
-
-    }
-
-    @Override
-    public void delete(Integer id) {
-
-    }
 }
