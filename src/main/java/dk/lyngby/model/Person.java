@@ -43,4 +43,8 @@ public class Person {
     public int hashCode() {
         return Objects.hash(id, name, age);
     }
+
+    public enum TestEnum {
+        TEST1, TEST2, TEST3
+    }
 }
