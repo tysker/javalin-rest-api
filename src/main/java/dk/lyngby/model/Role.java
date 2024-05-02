@@ -30,5 +30,6 @@ public class Role {
 
     public enum RoleName implements io.javalin.security.RouteRole{
         USER, SUPERVISOR, ADMIN, MANAGER, ANYONE;
+
     }
 }

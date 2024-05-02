@@ -19,6 +19,7 @@ import java.util.Map;
 
 public class ExceptionController {
     private final Logger LOGGER = LoggerFactory.getLogger(Routes.class);
+
     public void exceptionHandlerNotAuthorized(AuthorizationException e, Context ctx) {
         LOGGER.error(ctx.attribute("requestInfo") + " " + ctx.res().getStatus() + " " + e.getMessage());
         ctx.status(e.getStatusCode());
