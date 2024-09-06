@@ -1,0 +1,18 @@
+<configuration scan="true">
+
+    <!-- Console Appender -->
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{ISO8601} [%thread] %highlight(%-5level) %cyan(%logger{36}) - %green(%msg%n)</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="dk.lyngby" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

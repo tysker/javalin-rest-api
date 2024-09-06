@@ -1,0 +1,78 @@
+### Register user/admin
+POST {{url}}/auth/register
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123",
+  "roleList": ["ADMIN"]
+}
+
+> {% client.global.set("token", response.body.token); %}
+
+### Register user/user
+POST {{url}}/auth/register
+Content-Type: application/json
+
+{
+  "username": "stevejobs",
+  "password": "stevejobs123",
+  "roleList": ["USER"]
+}
+> {% client.global.set("token", response.body.token); %}
+
+### Register user_manager/manager
+POST {{url}}/auth/register
+Content-Type: application/json
+
+{
+  "username": "manager",
+  "password": "manager",
+  "roleList": ["MANAGER", "ADMIN"]
+}
+
+> {% client.global.set("token", response.body.token); %}
+
+### Login as admin
+POST {{url}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+> {% client.global.set("token", response.body.token); %}
+
+### Login as user
+POST {{url}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "user",
+  "password": "user123"
+}
+
+> {% client.global.set("token", response.body.token); %}
+
+### Login as manager
+POST {{url}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "manager",
+  "password": "manager"
+}
+
+> {% client.global.set("token", response.body.token); %}
+
+### Login as superman
+POST {{url}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "superman",
+  "password": "superman123"
+}
+
+> {% client.global.set("token", response.body.token); %}

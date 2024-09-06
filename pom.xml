@@ -5,9 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dk.lyngby</groupId>
-    <artifactId>3sem-javalin-rest-api</artifactId>
+    <artifactId>javalin-rest-api-3sem</artifactId>
     <version>1.0.0</version>
-
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -51,7 +50,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.6.0</version>
+            <version>42.7.3</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate.orm</groupId>
@@ -103,12 +102,12 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.4.7</version>
+            <version>1.4.12</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.4.7</version>
+            <version>1.4.14</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>

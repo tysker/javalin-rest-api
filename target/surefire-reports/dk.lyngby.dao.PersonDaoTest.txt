@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: dk.lyngby.dao.PersonDaoTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.721 s - in dk.lyngby.dao.PersonDaoTest
