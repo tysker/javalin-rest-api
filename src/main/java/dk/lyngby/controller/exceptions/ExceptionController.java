@@ -4,7 +4,7 @@ import dk.lyngby.exception.ApiException;
 import dk.lyngby.exception.AuthorizationException;
 import dk.lyngby.exception.Message;
 import dk.lyngby.exception.ValidationMessage;
-import dk.lyngby.exceptions.TokenException;
+import dk.token.exceptions.TokenException;
 import dk.lyngby.routes.Routes;
 import io.javalin.http.Context;
 import io.javalin.validation.ValidationError;

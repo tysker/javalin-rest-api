@@ -93,3 +93,7 @@ Do the following to get the Testcontainers up and running:
     # Symlink
     sudo ln -s $HOME/.docker/run/docker.sock /var/run/docker.sock
 ```
+
+
+[![](https://jitpack.io/v/tysker/token-dependency-3sem.svg)](https://jitpack.io/#tysker/token-dependency-3sem)
+

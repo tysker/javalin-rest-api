@@ -2,14 +2,14 @@ package dk.lyngby.controller.security;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import dk.lyngby.TokenFactory;
+import dk.token.TokenFactory;
 import dk.lyngby.config.ApplicationConfig;
 import dk.lyngby.config.HibernateConfig;
 import dk.lyngby.dao.AuthDao;
 import dk.lyngby.dto.TokenDto;
 import dk.lyngby.exception.ApiException;
 import dk.lyngby.exception.AuthorizationException;
-import dk.lyngby.exceptions.TokenException;
+import dk.token.exceptions.TokenException;
 import dk.lyngby.model.Role;
 import dk.lyngby.model.User;
 import io.javalin.http.Context;
