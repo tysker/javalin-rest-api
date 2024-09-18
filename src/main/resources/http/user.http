@@ -1,0 +1,10 @@
+GET {{url}}auth
+Authorization: Bearer {{token}}
+
+###
+GET {{url}}auth/steve
+Authorization: Bearer {{token}}
+
+###
+DELETE {{url}}auth/user_manager
+Authorization: Bearer {{token}}

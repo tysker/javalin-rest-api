@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  api:
+    image: tyskerdocker/javalinapi:latest
+    container_name: api
+    environment:
+        - CONNECTION_STR=jdbc:postgresql://db:5432/
+        - DB_USERNAME=dev
+        - DB_PASSWORD=ax2
+        - DEPLOYED=TRUE
+        - SECRET_KEY=841D8A6C80CBA4FCAD32D5367C18C53B
+        - TOKEN_EXPIRE_TIME=1800000
+        - ISSUER=cphbusiness.dk
+    ports:
+      - "7070:7070"
+    networks:
+      - database_network
+
+networks:
+  database_network:
+    name: database_network
+    internal: false
+    driver: bridge
+
+
