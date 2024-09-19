@@ -2,24 +2,16 @@ package dk.lyngby.controller.security;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-<<<<<<< HEAD
-=======
 import dk.token.TokenFactory;
->>>>>>> 4b52d446e340d03cbc61c14f00ccab56b5f9784a
 import dk.lyngby.config.ApplicationConfig;
 import dk.lyngby.config.HibernateConfig;
 import dk.lyngby.dao.AuthDao;
 import dk.lyngby.dto.TokenDto;
 import dk.lyngby.exception.ApiException;
 import dk.lyngby.exception.AuthorizationException;
-<<<<<<< HEAD
-=======
 import dk.token.exceptions.TokenException;
->>>>>>> 4b52d446e340d03cbc61c14f00ccab56b5f9784a
 import dk.lyngby.model.Role;
 import dk.lyngby.model.User;
-import dk.token.TokenFactory;
-import dk.token.exceptions.TokenException;
 import io.javalin.http.Context;
 import io.javalin.http.Handler;
 import io.javalin.security.RouteRole;

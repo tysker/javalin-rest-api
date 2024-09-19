@@ -3,13 +3,8 @@ package dk.lyngby.routes;
 import dk.lyngby.controller.exceptions.ExceptionController;
 import dk.lyngby.exception.ApiException;
 import dk.lyngby.exception.AuthorizationException;
-<<<<<<< HEAD
-
-=======
 import dk.token.exceptions.TokenException;
->>>>>>> 4b52d446e340d03cbc61c14f00ccab56b5f9784a
 import dk.lyngby.model.Role;
-import dk.token.exceptions.TokenException;
 import io.javalin.Javalin;
 import io.javalin.apibuilder.EndpointGroup;
 import io.javalin.http.Context;
