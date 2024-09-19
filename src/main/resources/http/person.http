@@ -1,0 +1,35 @@
+###
+GET {{url}}person
+Authorization: Bearer {{token}}
+
+###
+GET {{url}}person/1
+Authorization: Bearer {{token}}
+
+###
+DELETE {{url}}person/6
+Authorization: Bearer {{token}}
+
+###
+POST {{url}}person
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "firstName": "Dennis",
+  "lastName": "Hansen",
+  "age": "55",
+  "email": "karl@mail.com"
+}
+
+###
+PUT {{url}}person/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "firstName": "Karl",
+  "lastName": "HansenData",
+  "age": "55",
+  "email": "karl@mail.com"
+}

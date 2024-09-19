@@ -1,0 +1,12 @@
+INSERT INTO hobby VALUES ('Soccer','Ipsum delirium');
+INSERT INTO hobby VALUES ('Basketball','Ipsum delirium');
+INSERT INTO hobby VALUES ('Rugby','Ipsum delirium');
+INSERT INTO hobby VALUES ('Painting','Ipsum delirium');
+INSERT INTO hobby VALUES ('Running','Ipsum delirium');
+INSERT INTO hobby VALUES ('CrossFit','Ipsum delirium');
+INSERT INTO hobby VALUES ('Body Building','Ipsum delirium');
+INSERT INTO hobby VALUES ('Walking','Ipsum delirium');
+INSERT INTO hobby VALUES ('American Football','Ipsum delirium');
+INSERT INTO hobby VALUES ('Swimming','Ipsum delirium');
+INSERT INTO hobby VALUES ('Tennis','Ipsum delirium');
+INSERT INTO hobby VALUES ('Golf','Ipsum delirium');
