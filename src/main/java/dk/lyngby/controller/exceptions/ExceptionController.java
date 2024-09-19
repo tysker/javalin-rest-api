@@ -5,7 +5,7 @@ import dk.lyngby.exception.ApiException;
 import dk.lyngby.exception.AuthorizationException;
 import dk.lyngby.exception.Message;
 import dk.lyngby.exception.ValidationMessage;
-import dk.lyngby.exceptions.TokenException;
+import dk.token.exceptions.TokenException;
 import io.javalin.http.Context;
 import io.javalin.validation.ValidationError;
 import io.javalin.validation.ValidationException;
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ExceptionController {
-    private final Logger LOGGER = LoggerFactory.getLogger(ApplicationConfig.class);
+    private final Logger LOGGER = LoggerFactory.getLogger(ExceptionController.class);
     public void exceptionHandlerNotAuthorized(AuthorizationException e, Context ctx) {
         LOGGER.error(ctx.attribute("requestInfo") + " " + ctx.res().getStatus() + " " + e.getMessage());
         ctx.status(e.getStatusCode());

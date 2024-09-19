@@ -4,7 +4,6 @@ import dk.lyngby.config.ApplicationConfig;
 import dk.lyngby.config.HibernateConfig;
 import io.javalin.Javalin;
 import jakarta.persistence.EntityManagerFactory;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import util.LoginUtil;
@@ -28,11 +27,6 @@ public class UsersTest {
         adminToken = LoginUtil.getAdminToken();
 
     }
-
-//    @AfterAll
-//    static void afterAll() {
-//        ApplicationConfig.stopServer(app);
-//    }
 
     @Test
     public void test() {

@@ -16,7 +16,7 @@
 
         <hibernate-version>6.2.4.Final</hibernate-version>
         <restassured.version>5.3.2</restassured.version>
-        <testcontainers.version>1.18.0</testcontainers.version>
+        <testcontainers.version>1.20.1</testcontainers.version>
         <junit.version>5.9.1</junit.version>
 
         <issuer>test</issuer>
@@ -42,7 +42,7 @@
         <dependency>
             <groupId>com.github.tysker</groupId>
             <artifactId>token-dependency-3sem</artifactId>
-            <version>main-SNAPSHOT</version>
+            <version>1.0.1</version>
         </dependency>
 
         <!--  DB    -->
@@ -50,7 +50,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.6.0</version>
+            <version>42.7.3</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate.orm</groupId>
@@ -63,7 +63,7 @@
         <dependency>
             <groupId>io.javalin</groupId>
             <artifactId>javalin</artifactId>
-            <version>6.0.0-beta.4</version>
+            <version>6.3.0</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -89,7 +89,7 @@
             <!--  https://nimbusds.com/products/nimbus-jose-jwt   -->
             <groupId>com.nimbusds</groupId>
             <artifactId>nimbus-jose-jwt</artifactId>
-            <version>9.0.1</version>
+            <version>9.40</version>
         </dependency>
         <dependency>
             <groupId>org.mindrot</groupId>
@@ -102,12 +102,12 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.4.7</version>
+            <version>1.5.7</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.4.7</version>
+            <version>1.5.7</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -263,6 +263,8 @@
                                 <exclude>META-INF/versions/9/module-info.class</exclude>
                                 <exclude>META-INF/services/org.eclipse.jetty.webapp.Configuration</exclude>
                                 <exclude>META-INF/services/jakarta.servlet.ServletContainerInitializer</exclude>
+                                <exclude>META-INF/maven/com.google.code.gson/gson/pom.properties</exclude>
+                                <exclude>META-INF/maven/com.google.code.gson/gson/pom.xml</exclude>
                             </excludes>
                         </filter>
                     </filters>
