@@ -5,23 +5,23 @@ import dk.lyngby.model.Person;
 import jakarta.persistence.EntityManagerFactory;
 import org.junit.jupiter.api.*;
 
-//@TestInstance(TestInstance.Lifecycle.PER_CLASS) // https://www.baeldung.com/junit-testinstance-annotation
 class PersonDaoTest {
 
     private static EntityManagerFactory emf;
     private static PersonDao personDao;
 
-    private final Person p1 = new Person("Person 1", 1);
-    private final Person p2 = new Person("Person 2", 2);
-    private final Person p3 = new Person("Person 3", 3);
-
-
+    private Person p1;
+    private Person p2;
+    private Person p3;
 
     @BeforeEach
     public void init() {
         try (var em = emf.createEntityManager()) {
             em.getTransaction().begin();
             em.createQuery("DELETE FROM Person").executeUpdate();
+            p1 = new Person("Person 1", 1);
+            p2 = new Person("Person 2", 2);
+            p3 = new Person("Person 3", 3);
             em.persist(p1);
             em.persist(p2);
             em.persist(p3);
@@ -33,11 +33,6 @@ class PersonDaoTest {
     public static void setUp() {
         emf = HibernateConfig.getEntityManagerFactory(true);
         personDao = PersonDao.getInstance(emf);
-    }
-
-    @AfterAll
-    public static void tearDown() {
-        emf.close();
     }
 
     @Test

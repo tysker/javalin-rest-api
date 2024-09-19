@@ -1,122 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="dk.lyngby.dao.PersonDaoTest" time="6.721" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="dk.lyngby.dao.PersonDaoTest" time="3.767" tests="5" errors="4" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/home/joerg/Work/3-semester/startcode/3sem-javalin-rest-api/target/test-classes:/home/joerg/Work/3-semester/startcode/3sem-javalin-rest-api/target/classes:/home/joerg/.m2/repository/com/github/tysker/token-dependency-3sem/main-32e7ee6f88-1/token-dependency-3sem-main-32e7ee6f88-1.jar:/home/joerg/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/joerg/.m2/repository/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar:/home/joerg/.m2/repository/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.jar:/home/joerg/.m2/repository/org/hibernate/orm/hibernate-core/6.2.4.Final/hibernate-core-6.2.4.Final.jar:/home/joerg/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/joerg/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/joerg/.m2/repository/org/jboss/logging/jboss-logging/3.5.0.Final/jboss-logging-3.5.0.Final.jar:/home/joerg/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/home/joerg/.m2/repository/io/smallrye/jandex/3.0.5/jandex-3.0.5.jar:/home/joerg/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/home/joerg/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar:/home/joerg/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar:/home/joerg/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar:/home/joerg/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.2/jaxb-runtime-4.0.2.jar:/home/joerg/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.2/jaxb-core-4.0.2.jar:/home/joerg/.m2/repository/org/eclipse/angus/angus-activation/2.0.0/angus-activation-2.0.0.jar:/home/joerg/.m2/repository/org/glassfish/jaxb/txw2/4.0.2/txw2-4.0.2.jar:/home/joerg/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.1/istack-commons-runtime-4.1.1.jar:/home/joerg/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/joerg/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar:/home/joerg/.m2/repository/io/javalin/javalin/5.6.3/javalin-5.6.3.jar:/home/joerg/.m2/repository/org/jetbrains/annotations/24.0.1/annotations-24.0.1.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-server/11.0.17/jetty-server-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/toolchain/jetty-jakarta-servlet-api/5.0.2/jetty-jakarta-servlet-api-5.0.2.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-http/11.0.17/jetty-http-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-util/11.0.17/jetty-util-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-io/11.0.17/jetty-io-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-webapp/11.0.17/jetty-webapp-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-servlet/11.0.17/jetty-servlet-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-security/11.0.17/jetty-security-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-xml/11.0.17/jetty-xml-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/websocket/websocket-jetty-server/11.0.17/websocket-jetty-server-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/websocket/websocket-jetty-common/11.0.17/websocket-jetty-common-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/websocket/websocket-core-common/11.0.17/websocket-core-common-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/websocket/websocket-servlet/11.0.17/websocket-servlet-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/websocket/websocket-core-server/11.0.17/websocket-core-server-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/websocket/websocket-jetty-api/11.0.17/websocket-jetty-api-11.0.17.jar:/home/joerg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/home/joerg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/home/joerg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.21/kotlin-stdlib-common-1.8.21.jar:/home/joerg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/home/joerg/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.0/jackson-databind-2.15.0.jar:/home/joerg/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.0/jackson-annotations-2.15.0.jar:/home/joerg/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.0/jackson-core-2.15.0.jar:/home/joerg/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.2/jackson-datatype-jsr310-2.15.2.jar:/home/joerg/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar:/home/joerg/.m2/repository/com/nimbusds/nimbus-jose-jwt/9.0.1/nimbus-jose-jwt-9.0.1.jar:/home/joerg/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/home/joerg/.m2/repository/org/mindrot/jbcrypt/0.4/jbcrypt-0.4.jar:/home/joerg/.m2/repository/ch/qos/logback/logback-classic/1.4.7/logback-classic-1.4.7.jar:/home/joerg/.m2/repository/ch/qos/logback/logback-core/1.4.7/logback-core-1.4.7.jar:/home/joerg/.m2/repository/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar:/home/joerg/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.jar:/home/joerg/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/joerg/.m2/repository/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.jar:/home/joerg/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/joerg/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.1/junit-jupiter-engine-5.9.1.jar:/home/joerg/.m2/repository/org/junit/platform/junit-platform-engine/1.9.1/junit-platform-engine-1.9.1.jar:/home/joerg/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.1/junit-jupiter-params-5.9.1.jar:/home/joerg/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/home/joerg/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/joerg/.m2/repository/org/testcontainers/testcontainers/1.19.5/testcontainers-1.19.5.jar:/home/joerg/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/joerg/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/home/joerg/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/home/joerg/.m2/repository/com/github/docker-java/docker-java-api/3.3.4/docker-java-api-3.3.4.jar:/home/joerg/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.4/docker-java-transport-zerodep-3.3.4.jar:/home/joerg/.m2/repository/com/github/docker-java/docker-java-transport/3.3.4/docker-java-transport-3.3.4.jar:/home/joerg/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/joerg/.m2/repository/org/testcontainers/postgresql/1.19.5/postgresql-1.19.5.jar:/home/joerg/.m2/repository/org/testcontainers/jdbc/1.19.5/jdbc-1.19.5.jar:/home/joerg/.m2/repository/org/testcontainers/database-commons/1.19.5/database-commons-1.19.5.jar:/home/joerg/.m2/repository/org/testcontainers/junit-jupiter/1.19.5/junit-jupiter-1.19.5.jar:/home/joerg/.m2/repository/io/rest-assured/rest-assured/5.3.2/rest-assured-5.3.2.jar:/home/joerg/.m2/repository/org/apache/groovy/groovy/4.0.11/groovy-4.0.11.jar:/home/joerg/.m2/repository/org/apache/groovy/groovy-xml/4.0.11/groovy-xml-4.0.11.jar:/home/joerg/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/joerg/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/joerg/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/joerg/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/joerg/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/joerg/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/joerg/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/joerg/.m2/repository/io/rest-assured/json-path/5.3.2/json-path-5.3.2.jar:/home/joerg/.m2/repository/org/apache/groovy/groovy-json/4.0.11/groovy-json-4.0.11.jar:/home/joerg/.m2/repository/io/rest-assured/rest-assured-common/5.3.2/rest-assured-common-5.3.2.jar:/home/joerg/.m2/repository/io/rest-assured/xml-path/5.3.2/xml-path-5.3.2.jar:/home/joerg/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/home/joerg/.m2/repository/io/rest-assured/json-schema-validator/5.3.2/json-schema-validator-5.3.2.jar:/home/joerg/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/home/joerg/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/home/joerg/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/home/joerg/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/home/joerg/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/home/joerg/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/home/joerg/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/home/joerg/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/home/joerg/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/home/joerg/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/home/joerg/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/home/joerg/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/joerg/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/joerg/.m2/repository/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.jar:/home/joerg/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/joerg/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/joerg/.m2/repository/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar:/home/joerg/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:"/>
-    <property name="java.vm.vendor" value="Amazon.com Inc."/>
+    <property name="java.class.path" value="/home/jorg/Work/3-semester/startcode/javalin-rest-api-3sem/target/test-classes:/home/jorg/Work/3-semester/startcode/javalin-rest-api-3sem/target/classes:/home/jorg/.m2/repository/com/github/tysker/token-dependency-3sem/main-94ecda4996-1/token-dependency-3sem-main-94ecda4996-1.jar:/home/jorg/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/jorg/.m2/repository/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar:/home/jorg/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/home/jorg/.m2/repository/org/hibernate/orm/hibernate-core/6.2.4.Final/hibernate-core-6.2.4.Final.jar:/home/jorg/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/jorg/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/jorg/.m2/repository/org/jboss/logging/jboss-logging/3.5.0.Final/jboss-logging-3.5.0.Final.jar:/home/jorg/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/home/jorg/.m2/repository/io/smallrye/jandex/3.0.5/jandex-3.0.5.jar:/home/jorg/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/home/jorg/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar:/home/jorg/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar:/home/jorg/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar:/home/jorg/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.2/jaxb-runtime-4.0.2.jar:/home/jorg/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.2/jaxb-core-4.0.2.jar:/home/jorg/.m2/repository/org/eclipse/angus/angus-activation/2.0.0/angus-activation-2.0.0.jar:/home/jorg/.m2/repository/org/glassfish/jaxb/txw2/4.0.2/txw2-4.0.2.jar:/home/jorg/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.1/istack-commons-runtime-4.1.1.jar:/home/jorg/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/jorg/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar:/home/jorg/.m2/repository/io/javalin/javalin/5.6.3/javalin-5.6.3.jar:/home/jorg/.m2/repository/org/jetbrains/annotations/24.0.1/annotations-24.0.1.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-server/11.0.17/jetty-server-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/toolchain/jetty-jakarta-servlet-api/5.0.2/jetty-jakarta-servlet-api-5.0.2.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-http/11.0.17/jetty-http-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-util/11.0.17/jetty-util-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-io/11.0.17/jetty-io-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-webapp/11.0.17/jetty-webapp-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-servlet/11.0.17/jetty-servlet-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-security/11.0.17/jetty-security-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-xml/11.0.17/jetty-xml-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/websocket/websocket-jetty-server/11.0.17/websocket-jetty-server-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/websocket/websocket-jetty-common/11.0.17/websocket-jetty-common-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/websocket/websocket-core-common/11.0.17/websocket-core-common-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/websocket/websocket-servlet/11.0.17/websocket-servlet-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/websocket/websocket-core-server/11.0.17/websocket-core-server-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/websocket/websocket-jetty-api/11.0.17/websocket-jetty-api-11.0.17.jar:/home/jorg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/home/jorg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/home/jorg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.21/kotlin-stdlib-common-1.8.21.jar:/home/jorg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/home/jorg/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.0/jackson-databind-2.15.0.jar:/home/jorg/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.0/jackson-annotations-2.15.0.jar:/home/jorg/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.0/jackson-core-2.15.0.jar:/home/jorg/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.2/jackson-datatype-jsr310-2.15.2.jar:/home/jorg/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar:/home/jorg/.m2/repository/com/nimbusds/nimbus-jose-jwt/9.0.1/nimbus-jose-jwt-9.0.1.jar:/home/jorg/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/home/jorg/.m2/repository/org/mindrot/jbcrypt/0.4/jbcrypt-0.4.jar:/home/jorg/.m2/repository/ch/qos/logback/logback-classic/1.4.12/logback-classic-1.4.12.jar:/home/jorg/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/home/jorg/.m2/repository/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar:/home/jorg/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.jar:/home/jorg/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/jorg/.m2/repository/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.jar:/home/jorg/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/jorg/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.1/junit-jupiter-engine-5.9.1.jar:/home/jorg/.m2/repository/org/junit/platform/junit-platform-engine/1.9.1/junit-platform-engine-1.9.1.jar:/home/jorg/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.1/junit-jupiter-params-5.9.1.jar:/home/jorg/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/home/jorg/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/jorg/.m2/repository/org/testcontainers/testcontainers/1.19.5/testcontainers-1.19.5.jar:/home/jorg/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/jorg/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/home/jorg/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/home/jorg/.m2/repository/com/github/docker-java/docker-java-api/3.3.4/docker-java-api-3.3.4.jar:/home/jorg/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.4/docker-java-transport-zerodep-3.3.4.jar:/home/jorg/.m2/repository/com/github/docker-java/docker-java-transport/3.3.4/docker-java-transport-3.3.4.jar:/home/jorg/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/jorg/.m2/repository/org/testcontainers/postgresql/1.19.5/postgresql-1.19.5.jar:/home/jorg/.m2/repository/org/testcontainers/jdbc/1.19.5/jdbc-1.19.5.jar:/home/jorg/.m2/repository/org/testcontainers/database-commons/1.19.5/database-commons-1.19.5.jar:/home/jorg/.m2/repository/org/testcontainers/junit-jupiter/1.19.5/junit-jupiter-1.19.5.jar:/home/jorg/.m2/repository/io/rest-assured/rest-assured/5.3.2/rest-assured-5.3.2.jar:/home/jorg/.m2/repository/org/apache/groovy/groovy/4.0.11/groovy-4.0.11.jar:/home/jorg/.m2/repository/org/apache/groovy/groovy-xml/4.0.11/groovy-xml-4.0.11.jar:/home/jorg/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/jorg/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/jorg/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/jorg/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/jorg/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/jorg/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/jorg/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/jorg/.m2/repository/io/rest-assured/json-path/5.3.2/json-path-5.3.2.jar:/home/jorg/.m2/repository/org/apache/groovy/groovy-json/4.0.11/groovy-json-4.0.11.jar:/home/jorg/.m2/repository/io/rest-assured/rest-assured-common/5.3.2/rest-assured-common-5.3.2.jar:/home/jorg/.m2/repository/io/rest-assured/xml-path/5.3.2/xml-path-5.3.2.jar:/home/jorg/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/home/jorg/.m2/repository/io/rest-assured/json-schema-validator/5.3.2/json-schema-validator-5.3.2.jar:/home/jorg/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/home/jorg/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/home/jorg/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/home/jorg/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/home/jorg/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/home/jorg/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/home/jorg/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/home/jorg/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/home/jorg/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/home/jorg/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/home/jorg/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/home/jorg/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/jorg/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/jorg/.m2/repository/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.jar:/home/jorg/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/jorg/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/jorg/.m2/repository/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar:/home/jorg/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.vendor.url" value="https://aws.amazon.com/corretto/"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="user.timezone" value="Europe/Copenhagen"/>
     <property name="os.name" value="Linux"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
-    <property name="sun.boot.library.path" value="/home/joerg/.jdks/corretto-17.0.11/lib"/>
-    <property name="sun.java.command" value="/home/joerg/Work/3-semester/startcode/3sem-javalin-rest-api/target/surefire/surefirebooter-20240627085156140_3.jar /home/joerg/Work/3-semester/startcode/3sem-javalin-rest-api/target/surefire 2024-06-27T08-51-56_068-jvmRun1 surefire-20240627085156140_1tmp surefire_0-20240627085156140_2tmp"/>
+    <property name="sun.boot.library.path" value="/home/jorg/.sdkman/candidates/java/17.0.12-oracle/lib"/>
+    <property name="sun.java.command" value="/home/jorg/Work/3-semester/startcode/javalin-rest-api-3sem/target/surefire/surefirebooter-20240919102032006_3.jar /home/jorg/Work/3-semester/startcode/javalin-rest-api-3sem/target/surefire 2024-09-19T10-20-31_909-jvmRun1 surefire-20240919102032006_1tmp surefire_0-20240919102032006_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/home/joerg/Work/3-semester/startcode/3sem-javalin-rest-api/target/test-classes:/home/joerg/Work/3-semester/startcode/3sem-javalin-rest-api/target/classes:/home/joerg/.m2/repository/com/github/tysker/token-dependency-3sem/main-32e7ee6f88-1/token-dependency-3sem-main-32e7ee6f88-1.jar:/home/joerg/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/joerg/.m2/repository/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar:/home/joerg/.m2/repository/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.jar:/home/joerg/.m2/repository/org/hibernate/orm/hibernate-core/6.2.4.Final/hibernate-core-6.2.4.Final.jar:/home/joerg/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/joerg/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/joerg/.m2/repository/org/jboss/logging/jboss-logging/3.5.0.Final/jboss-logging-3.5.0.Final.jar:/home/joerg/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/home/joerg/.m2/repository/io/smallrye/jandex/3.0.5/jandex-3.0.5.jar:/home/joerg/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/home/joerg/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar:/home/joerg/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar:/home/joerg/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar:/home/joerg/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.2/jaxb-runtime-4.0.2.jar:/home/joerg/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.2/jaxb-core-4.0.2.jar:/home/joerg/.m2/repository/org/eclipse/angus/angus-activation/2.0.0/angus-activation-2.0.0.jar:/home/joerg/.m2/repository/org/glassfish/jaxb/txw2/4.0.2/txw2-4.0.2.jar:/home/joerg/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.1/istack-commons-runtime-4.1.1.jar:/home/joerg/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/joerg/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar:/home/joerg/.m2/repository/io/javalin/javalin/5.6.3/javalin-5.6.3.jar:/home/joerg/.m2/repository/org/jetbrains/annotations/24.0.1/annotations-24.0.1.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-server/11.0.17/jetty-server-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/toolchain/jetty-jakarta-servlet-api/5.0.2/jetty-jakarta-servlet-api-5.0.2.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-http/11.0.17/jetty-http-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-util/11.0.17/jetty-util-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-io/11.0.17/jetty-io-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-webapp/11.0.17/jetty-webapp-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-servlet/11.0.17/jetty-servlet-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-security/11.0.17/jetty-security-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/jetty-xml/11.0.17/jetty-xml-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/websocket/websocket-jetty-server/11.0.17/websocket-jetty-server-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/websocket/websocket-jetty-common/11.0.17/websocket-jetty-common-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/websocket/websocket-core-common/11.0.17/websocket-core-common-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/websocket/websocket-servlet/11.0.17/websocket-servlet-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/websocket/websocket-core-server/11.0.17/websocket-core-server-11.0.17.jar:/home/joerg/.m2/repository/org/eclipse/jetty/websocket/websocket-jetty-api/11.0.17/websocket-jetty-api-11.0.17.jar:/home/joerg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/home/joerg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/home/joerg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.21/kotlin-stdlib-common-1.8.21.jar:/home/joerg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/home/joerg/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.0/jackson-databind-2.15.0.jar:/home/joerg/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.0/jackson-annotations-2.15.0.jar:/home/joerg/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.0/jackson-core-2.15.0.jar:/home/joerg/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.2/jackson-datatype-jsr310-2.15.2.jar:/home/joerg/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar:/home/joerg/.m2/repository/com/nimbusds/nimbus-jose-jwt/9.0.1/nimbus-jose-jwt-9.0.1.jar:/home/joerg/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/home/joerg/.m2/repository/org/mindrot/jbcrypt/0.4/jbcrypt-0.4.jar:/home/joerg/.m2/repository/ch/qos/logback/logback-classic/1.4.7/logback-classic-1.4.7.jar:/home/joerg/.m2/repository/ch/qos/logback/logback-core/1.4.7/logback-core-1.4.7.jar:/home/joerg/.m2/repository/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar:/home/joerg/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.jar:/home/joerg/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/joerg/.m2/repository/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.jar:/home/joerg/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/joerg/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.1/junit-jupiter-engine-5.9.1.jar:/home/joerg/.m2/repository/org/junit/platform/junit-platform-engine/1.9.1/junit-platform-engine-1.9.1.jar:/home/joerg/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.1/junit-jupiter-params-5.9.1.jar:/home/joerg/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/home/joerg/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/joerg/.m2/repository/org/testcontainers/testcontainers/1.19.5/testcontainers-1.19.5.jar:/home/joerg/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/joerg/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/home/joerg/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/home/joerg/.m2/repository/com/github/docker-java/docker-java-api/3.3.4/docker-java-api-3.3.4.jar:/home/joerg/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.4/docker-java-transport-zerodep-3.3.4.jar:/home/joerg/.m2/repository/com/github/docker-java/docker-java-transport/3.3.4/docker-java-transport-3.3.4.jar:/home/joerg/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/joerg/.m2/repository/org/testcontainers/postgresql/1.19.5/postgresql-1.19.5.jar:/home/joerg/.m2/repository/org/testcontainers/jdbc/1.19.5/jdbc-1.19.5.jar:/home/joerg/.m2/repository/org/testcontainers/database-commons/1.19.5/database-commons-1.19.5.jar:/home/joerg/.m2/repository/org/testcontainers/junit-jupiter/1.19.5/junit-jupiter-1.19.5.jar:/home/joerg/.m2/repository/io/rest-assured/rest-assured/5.3.2/rest-assured-5.3.2.jar:/home/joerg/.m2/repository/org/apache/groovy/groovy/4.0.11/groovy-4.0.11.jar:/home/joerg/.m2/repository/org/apache/groovy/groovy-xml/4.0.11/groovy-xml-4.0.11.jar:/home/joerg/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/joerg/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/joerg/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/joerg/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/joerg/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/joerg/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/joerg/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/joerg/.m2/repository/io/rest-assured/json-path/5.3.2/json-path-5.3.2.jar:/home/joerg/.m2/repository/org/apache/groovy/groovy-json/4.0.11/groovy-json-4.0.11.jar:/home/joerg/.m2/repository/io/rest-assured/rest-assured-common/5.3.2/rest-assured-common-5.3.2.jar:/home/joerg/.m2/repository/io/rest-assured/xml-path/5.3.2/xml-path-5.3.2.jar:/home/joerg/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/home/joerg/.m2/repository/io/rest-assured/json-schema-validator/5.3.2/json-schema-validator-5.3.2.jar:/home/joerg/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/home/joerg/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/home/joerg/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/home/joerg/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/home/joerg/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/home/joerg/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/home/joerg/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/home/joerg/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/home/joerg/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/home/joerg/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/home/joerg/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/home/joerg/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/joerg/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/joerg/.m2/repository/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.jar:/home/joerg/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/joerg/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/joerg/.m2/repository/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar:/home/joerg/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:"/>
+    <property name="surefire.test.class.path" value="/home/jorg/Work/3-semester/startcode/javalin-rest-api-3sem/target/test-classes:/home/jorg/Work/3-semester/startcode/javalin-rest-api-3sem/target/classes:/home/jorg/.m2/repository/com/github/tysker/token-dependency-3sem/main-94ecda4996-1/token-dependency-3sem-main-94ecda4996-1.jar:/home/jorg/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/jorg/.m2/repository/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar:/home/jorg/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/home/jorg/.m2/repository/org/hibernate/orm/hibernate-core/6.2.4.Final/hibernate-core-6.2.4.Final.jar:/home/jorg/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/jorg/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/jorg/.m2/repository/org/jboss/logging/jboss-logging/3.5.0.Final/jboss-logging-3.5.0.Final.jar:/home/jorg/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/home/jorg/.m2/repository/io/smallrye/jandex/3.0.5/jandex-3.0.5.jar:/home/jorg/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar:/home/jorg/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar:/home/jorg/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar:/home/jorg/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.0/jakarta.activation-api-2.1.0.jar:/home/jorg/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.2/jaxb-runtime-4.0.2.jar:/home/jorg/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.2/jaxb-core-4.0.2.jar:/home/jorg/.m2/repository/org/eclipse/angus/angus-activation/2.0.0/angus-activation-2.0.0.jar:/home/jorg/.m2/repository/org/glassfish/jaxb/txw2/4.0.2/txw2-4.0.2.jar:/home/jorg/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.1/istack-commons-runtime-4.1.1.jar:/home/jorg/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/jorg/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar:/home/jorg/.m2/repository/io/javalin/javalin/5.6.3/javalin-5.6.3.jar:/home/jorg/.m2/repository/org/jetbrains/annotations/24.0.1/annotations-24.0.1.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-server/11.0.17/jetty-server-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/toolchain/jetty-jakarta-servlet-api/5.0.2/jetty-jakarta-servlet-api-5.0.2.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-http/11.0.17/jetty-http-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-util/11.0.17/jetty-util-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-io/11.0.17/jetty-io-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-webapp/11.0.17/jetty-webapp-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-servlet/11.0.17/jetty-servlet-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-security/11.0.17/jetty-security-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/jetty-xml/11.0.17/jetty-xml-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/websocket/websocket-jetty-server/11.0.17/websocket-jetty-server-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/websocket/websocket-jetty-common/11.0.17/websocket-jetty-common-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/websocket/websocket-core-common/11.0.17/websocket-core-common-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/websocket/websocket-servlet/11.0.17/websocket-servlet-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/websocket/websocket-core-server/11.0.17/websocket-core-server-11.0.17.jar:/home/jorg/.m2/repository/org/eclipse/jetty/websocket/websocket-jetty-api/11.0.17/websocket-jetty-api-11.0.17.jar:/home/jorg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/home/jorg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/home/jorg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.21/kotlin-stdlib-common-1.8.21.jar:/home/jorg/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/home/jorg/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.0/jackson-databind-2.15.0.jar:/home/jorg/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.0/jackson-annotations-2.15.0.jar:/home/jorg/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.0/jackson-core-2.15.0.jar:/home/jorg/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.2/jackson-datatype-jsr310-2.15.2.jar:/home/jorg/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar:/home/jorg/.m2/repository/com/nimbusds/nimbus-jose-jwt/9.0.1/nimbus-jose-jwt-9.0.1.jar:/home/jorg/.m2/repository/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar:/home/jorg/.m2/repository/org/mindrot/jbcrypt/0.4/jbcrypt-0.4.jar:/home/jorg/.m2/repository/ch/qos/logback/logback-classic/1.4.12/logback-classic-1.4.12.jar:/home/jorg/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/home/jorg/.m2/repository/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar:/home/jorg/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.jar:/home/jorg/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/jorg/.m2/repository/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.jar:/home/jorg/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/jorg/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.1/junit-jupiter-engine-5.9.1.jar:/home/jorg/.m2/repository/org/junit/platform/junit-platform-engine/1.9.1/junit-platform-engine-1.9.1.jar:/home/jorg/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.1/junit-jupiter-params-5.9.1.jar:/home/jorg/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/home/jorg/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/jorg/.m2/repository/org/testcontainers/testcontainers/1.19.5/testcontainers-1.19.5.jar:/home/jorg/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/jorg/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/home/jorg/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/home/jorg/.m2/repository/com/github/docker-java/docker-java-api/3.3.4/docker-java-api-3.3.4.jar:/home/jorg/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.4/docker-java-transport-zerodep-3.3.4.jar:/home/jorg/.m2/repository/com/github/docker-java/docker-java-transport/3.3.4/docker-java-transport-3.3.4.jar:/home/jorg/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/jorg/.m2/repository/org/testcontainers/postgresql/1.19.5/postgresql-1.19.5.jar:/home/jorg/.m2/repository/org/testcontainers/jdbc/1.19.5/jdbc-1.19.5.jar:/home/jorg/.m2/repository/org/testcontainers/database-commons/1.19.5/database-commons-1.19.5.jar:/home/jorg/.m2/repository/org/testcontainers/junit-jupiter/1.19.5/junit-jupiter-1.19.5.jar:/home/jorg/.m2/repository/io/rest-assured/rest-assured/5.3.2/rest-assured-5.3.2.jar:/home/jorg/.m2/repository/org/apache/groovy/groovy/4.0.11/groovy-4.0.11.jar:/home/jorg/.m2/repository/org/apache/groovy/groovy-xml/4.0.11/groovy-xml-4.0.11.jar:/home/jorg/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/jorg/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/jorg/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/jorg/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/jorg/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/jorg/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/jorg/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/jorg/.m2/repository/io/rest-assured/json-path/5.3.2/json-path-5.3.2.jar:/home/jorg/.m2/repository/org/apache/groovy/groovy-json/4.0.11/groovy-json-4.0.11.jar:/home/jorg/.m2/repository/io/rest-assured/rest-assured-common/5.3.2/rest-assured-common-5.3.2.jar:/home/jorg/.m2/repository/io/rest-assured/xml-path/5.3.2/xml-path-5.3.2.jar:/home/jorg/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/home/jorg/.m2/repository/io/rest-assured/json-schema-validator/5.3.2/json-schema-validator-5.3.2.jar:/home/jorg/.m2/repository/com/github/java-json-tools/json-schema-validator/2.2.14/json-schema-validator-2.2.14.jar:/home/jorg/.m2/repository/com/github/java-json-tools/jackson-coreutils-equivalence/1.0/jackson-coreutils-equivalence-1.0.jar:/home/jorg/.m2/repository/com/github/java-json-tools/jackson-coreutils/2.0/jackson-coreutils-2.0.jar:/home/jorg/.m2/repository/com/github/java-json-tools/msg-simple/1.2/msg-simple-1.2.jar:/home/jorg/.m2/repository/com/github/java-json-tools/btf/1.3/btf-1.3.jar:/home/jorg/.m2/repository/com/github/java-json-tools/json-schema-core/1.2.14/json-schema-core-1.2.14.jar:/home/jorg/.m2/repository/com/github/java-json-tools/uri-template/0.10/uri-template-0.10.jar:/home/jorg/.m2/repository/org/mozilla/rhino/1.7.7.2/rhino-1.7.7.2.jar:/home/jorg/.m2/repository/com/sun/mail/mailapi/1.6.2/mailapi-1.6.2.jar:/home/jorg/.m2/repository/joda-time/joda-time/2.10.5/joda-time-2.10.5.jar:/home/jorg/.m2/repository/com/googlecode/libphonenumber/libphonenumber/8.11.1/libphonenumber-8.11.1.jar:/home/jorg/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/jorg/.m2/repository/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/jorg/.m2/repository/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.jar:/home/jorg/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/jorg/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/jorg/.m2/repository/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar:/home/jorg/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/home/joerg"/>
+    <property name="user.home" value="/home/jorg"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2024-04-16"/>
-    <property name="java.home" value="/home/joerg/.jdks/corretto-17.0.11"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="/home/jorg/.sdkman/candidates/java/17.0.12-oracle"/>
     <property name="file.separator" value="/"/>
-    <property name="basedir" value="/home/joerg/Work/3-semester/startcode/3sem-javalin-rest-api"/>
+    <property name="basedir" value="/home/jorg/Work/3-semester/startcode/javalin-rest-api-3sem"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/joerg/Work/3-semester/startcode/3sem-javalin-rest-api/target/surefire/surefirebooter-20240627085156140_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/jorg/Work/3-semester/startcode/javalin-rest-api-3sem/target/surefire/surefirebooter-20240919102032006_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="17.0.11+9-LTS"/>
-    <property name="user.name" value="joerg"/>
+    <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
+    <property name="user.name" value="jorg"/>
     <property name="path.separator" value=":"/>
-    <property name="os.version" value="6.9.3-76060903-generic"/>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="os.version" value="6.8.0-45-generic"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="java.vendor.version" value="Corretto-17.0.11.9.1"/>
-    <property name="localRepository" value="/home/joerg/.m2/repository"/>
-    <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-17/issues/"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/jorg/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="idea.version" value="2024.1.3"/>
-    <property name="java.version" value="17.0.11"/>
-    <property name="user.dir" value="/home/joerg/Work/3-semester/startcode/3sem-javalin-rest-api"/>
+    <property name="idea.version" value="2024.2.2"/>
+    <property name="java.version" value="17.0.12"/>
+    <property name="user.dir" value="/home/jorg/Work/3-semester/startcode/javalin-rest-api-3sem"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.vendor" value="Amazon.com Inc."/>
-    <property name="java.vm.version" value="17.0.11+9-LTS"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.12+8-LTS-286"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="create" classname="dk.lyngby.dao.PersonDaoTest" time="0.169">
-    <system-out><![CDATA[2024-06-27 08:51:56,797 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36morg.hibernate.Version&amp#27;[0;39m - &amp#27;[32mHHH000412: Hibernate ORM core version 6.2.4.Final
-&amp#27;[0;39m2024-06-27 08:51:56,803 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36morg.hibernate.cfg.Environment&amp#27;[0;39m - &amp#27;[32mHHH000406: Using bytecode reflection optimizer
-&amp#27;[0;39m2024-06-27 08:51:56,933 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.pooling&amp#27;[0;39m - &amp#27;[32mHHH10001002: Using built-in connection pool (not intended for production use)
-&amp#27;[0;39m2024-06-27 08:51:56,935 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.pooling&amp#27;[0;39m - &amp#27;[32mHHH10001005: Loaded JDBC driver class: org.testcontainers.jdbc.ContainerDatabaseDriver
-&amp#27;[0;39m2024-06-27 08:51:56,935 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.pooling&amp#27;[0;39m - &amp#27;[32mHHH10001012: Connecting with JDBC URL [jdbc:tc:postgresql:15.3-alpine3.18:///testdb]
-&amp#27;[0;39m2024-06-27 08:51:56,936 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.pooling&amp#27;[0;39m - &amp#27;[32mHHH10001001: Connection properties: {password=****, user=postgres}
-&amp#27;[0;39m2024-06-27 08:51:56,936 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.pooling&amp#27;[0;39m - &amp#27;[32mHHH10001003: Autocommit mode: false
-&amp#27;[0;39m2024-06-27 08:51:56,937 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.pooling&amp#27;[0;39m - &amp#27;[32mHHH10001115: Connection pool size: 20 (min=1)
-&amp#27;[0;39m2024-06-27 08:51:56,961 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.testcontainers.images.PullPolicy&amp#27;[0;39m - &amp#27;[32mImage pull policy will be performed by: DefaultPullPolicy()
-&amp#27;[0;39m2024-06-27 08:51:56,962 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.t.utility.ImageNameSubstitutor&amp#27;[0;39m - &amp#27;[32mImage name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
-&amp#27;[0;39m2024-06-27 08:51:57,126 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.t.d.DockerClientProviderStrategy&amp#27;[0;39m - &amp#27;[32mLoaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
-&amp#27;[0;39m2024-06-27 08:51:57,329 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.t.d.DockerClientProviderStrategy&amp#27;[0;39m - &amp#27;[32mFound Docker environment with local Unix socket (unix:///var/run/docker.sock)
-&amp#27;[0;39m2024-06-27 08:51:57,330 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.testcontainers.DockerClientFactory&amp#27;[0;39m - &amp#27;[32mDocker host IP address is localhost
-&amp#27;[0;39m2024-06-27 08:51:57,343 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.testcontainers.DockerClientFactory&amp#27;[0;39m - &amp#27;[32mConnected to docker: 
-  Server Version: 27.0.1
-  API Version: 1.46
-  Operating System: Pop!_OS 22.04 LTS
+  <testcase name="create" classname="dk.lyngby.dao.PersonDaoTest" time="0.18">
+    <system-out><![CDATA[2024-09-19 10:20:32,646 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36morg.hibernate.Version&amp#27;[0;39m - &amp#27;[32mHHH000412: Hibernate ORM core version 6.2.4.Final
+&amp#27;[0;39m2024-09-19 10:20:32,651 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36morg.hibernate.cfg.Environment&amp#27;[0;39m - &amp#27;[32mHHH000406: Using bytecode reflection optimizer
+&amp#27;[0;39m2024-09-19 10:20:32,772 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.pooling&amp#27;[0;39m - &amp#27;[32mHHH10001002: Using built-in connection pool (not intended for production use)
+&amp#27;[0;39m2024-09-19 10:20:32,774 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.pooling&amp#27;[0;39m - &amp#27;[32mHHH10001005: Loaded JDBC driver class: org.testcontainers.jdbc.ContainerDatabaseDriver
+&amp#27;[0;39m2024-09-19 10:20:32,775 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.pooling&amp#27;[0;39m - &amp#27;[32mHHH10001012: Connecting with JDBC URL [jdbc:tc:postgresql:15.3-alpine3.18:///testdb]
+&amp#27;[0;39m2024-09-19 10:20:32,775 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.pooling&amp#27;[0;39m - &amp#27;[32mHHH10001001: Connection properties: {password=****, user=postgres}
+&amp#27;[0;39m2024-09-19 10:20:32,775 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.pooling&amp#27;[0;39m - &amp#27;[32mHHH10001003: Autocommit mode: false
+&amp#27;[0;39m2024-09-19 10:20:32,776 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.pooling&amp#27;[0;39m - &amp#27;[32mHHH10001115: Connection pool size: 20 (min=1)
+&amp#27;[0;39m2024-09-19 10:20:32,801 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.testcontainers.images.PullPolicy&amp#27;[0;39m - &amp#27;[32mImage pull policy will be performed by: DefaultPullPolicy()
+&amp#27;[0;39m2024-09-19 10:20:32,803 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.t.utility.ImageNameSubstitutor&amp#27;[0;39m - &amp#27;[32mImage name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+&amp#27;[0;39m2024-09-19 10:20:32,918 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.t.d.DockerClientProviderStrategy&amp#27;[0;39m - &amp#27;[32mLoaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+&amp#27;[0;39m2024-09-19 10:20:33,148 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.t.d.DockerClientProviderStrategy&amp#27;[0;39m - &amp#27;[32mFound Docker environment with local Unix socket (unix:///var/run/docker.sock)
+&amp#27;[0;39m2024-09-19 10:20:33,152 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.testcontainers.DockerClientFactory&amp#27;[0;39m - &amp#27;[32mDocker host IP address is localhost
+&amp#27;[0;39m2024-09-19 10:20:33,168 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.testcontainers.DockerClientFactory&amp#27;[0;39m - &amp#27;[32mConnected to docker: 
+  Server Version: 27.2.1
+  API Version: 1.47
+  Operating System: Ubuntu 24.04.1 LTS
   Total Memory: 15347 MB
-&amp#27;[0;39m2024-06-27 08:51:57,371 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mPulling docker image: testcontainers/ryuk:0.6.0. Please be patient; this may take some time but only needs to be done once.
-&amp#27;[0;39m2024-06-27 08:51:59,138 [docker-java-stream-174193782] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mStarting to pull image
-&amp#27;[0;39m2024-06-27 08:51:59,152 [docker-java-stream-174193782] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mPulling image layers:  0 pending,  0 downloaded,  0 extracted, (0 bytes/0 bytes)
-&amp#27;[0;39m2024-06-27 08:52:00,073 [docker-java-stream-174193782] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mPulling image layers:  2 pending,  1 downloaded,  0 extracted, (66 KB/? MB)
-&amp#27;[0;39m2024-06-27 08:52:00,176 [docker-java-stream-174193782] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mPulling image layers:  1 pending,  2 downloaded,  0 extracted, (5 MB/? MB)
-&amp#27;[0;39m2024-06-27 08:52:00,177 [docker-java-stream-174193782] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mPulling image layers:  0 pending,  3 downloaded,  0 extracted, (5 MB/6 MB)
-&amp#27;[0;39m2024-06-27 08:52:00,261 [docker-java-stream-174193782] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mPulling image layers:  0 pending,  3 downloaded,  1 extracted, (5 MB/6 MB)
-&amp#27;[0;39m2024-06-27 08:52:00,321 [docker-java-stream-174193782] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mPulling image layers:  0 pending,  3 downloaded,  2 extracted, (5 MB/6 MB)
-&amp#27;[0;39m2024-06-27 08:52:00,352 [docker-java-stream-174193782] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mPulling image layers:  0 pending,  3 downloaded,  3 extracted, (6 MB/6 MB)
-&amp#27;[0;39m2024-06-27 08:52:00,362 [docker-java-stream-174193782] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mPull complete. 3 layers, pulled in 1s (downloaded 6 MB at 6 MB/s)
-&amp#27;[0;39m2024-06-27 08:52:00,362 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mImage testcontainers/ryuk:0.6.0 pull took PT2.989844794S
-&amp#27;[0;39m2024-06-27 08:52:00,376 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mCreating container for image: testcontainers/ryuk:0.6.0
-&amp#27;[0;39m2024-06-27 08:52:00,453 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mContainer testcontainers/ryuk:0.6.0 is starting: f87776e1dc2775e0aae8fee9f08a910dfa30b0e34a7eb2cc469a0a062c4a5002
-&amp#27;[0;39m2024-06-27 08:52:00,687 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mContainer testcontainers/ryuk:0.6.0 started in PT0.311571382S
-&amp#27;[0;39m2024-06-27 08:52:00,691 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.t.utility.RyukResourceReaper&amp#27;[0;39m - &amp#27;[32mRyuk started - will monitor and terminate Testcontainers containers on JVM exit
-&amp#27;[0;39m2024-06-27 08:52:00,691 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.testcontainers.DockerClientFactory&amp#27;[0;39m - &amp#27;[32mChecking the system...
-&amp#27;[0;39m2024-06-27 08:52:00,692 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.testcontainers.DockerClientFactory&amp#27;[0;39m - &amp#27;[32m✔︎ Docker server version should be at least 1.6.0
-&amp#27;[0;39m2024-06-27 08:52:00,693 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.postgres:15.3-alpine3.18&amp#27;[0;39m - &amp#27;[32mCreating container for image: postgres:15.3-alpine3.18
-&amp#27;[0;39m2024-06-27 08:52:00,718 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.postgres:15.3-alpine3.18&amp#27;[0;39m - &amp#27;[32mContainer postgres:15.3-alpine3.18 is starting: 39d512b672547ebb1e751eed4696eb24f76a630e3afad084652480fd05828bfb
-&amp#27;[0;39m2024-06-27 08:52:02,171 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.postgres:15.3-alpine3.18&amp#27;[0;39m - &amp#27;[32mContainer postgres:15.3-alpine3.18 started in PT1.478593014S
-&amp#27;[0;39m2024-06-27 08:52:02,172 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.postgres:15.3-alpine3.18&amp#27;[0;39m - &amp#27;[32mContainer is started (JDBC URL: jdbc:postgresql://localhost:32769/test?loggerLevel=OFF)
-&amp#27;[0;39m2024-06-27 08:52:02,548 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.h.b.i.BytecodeProviderInitiator&amp#27;[0;39m - &amp#27;[32mHHH000021: Bytecode provider name : bytebuddy
-&amp#27;[0;39m2024-06-27 08:52:03,033 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.h.e.t.j.p.i.JtaPlatformInitiator&amp#27;[0;39m - &amp#27;[32mHHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+&amp#27;[0;39m2024-09-19 10:20:33,185 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mCreating container for image: testcontainers/ryuk:0.6.0
+&amp#27;[0;39m2024-09-19 10:20:33,189 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.t.utility.RegistryAuthLocator&amp#27;[0;39m - &amp#27;[32mFailure when attempting to lookup auth config. Please ignore if you don't have images in an authenticated registry. Details: (dockerImageName: testcontainers/ryuk:0.6.0, configFile: /home/jorg/.docker/config.json, configEnv: DOCKER_AUTH_CONFIG). Falling back to docker-java default behaviour. Exception message: Status 404: No config supplied. Checked in order: /home/jorg/.docker/config.json (file not found), DOCKER_AUTH_CONFIG (not set)
+&amp#27;[0;39m2024-09-19 10:20:33,261 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mContainer testcontainers/ryuk:0.6.0 is starting: 49a3a26c25763b2176b1b32330e3b0d0ff722c25943a5faf5b8b28dee9f97c43
+&amp#27;[0;39m2024-09-19 10:20:33,498 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.testcontainers/ryuk:0.6.0&amp#27;[0;39m - &amp#27;[32mContainer testcontainers/ryuk:0.6.0 started in PT0.313073844S
+&amp#27;[0;39m2024-09-19 10:20:33,502 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.t.utility.RyukResourceReaper&amp#27;[0;39m - &amp#27;[32mRyuk started - will monitor and terminate Testcontainers containers on JVM exit
+&amp#27;[0;39m2024-09-19 10:20:33,502 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.testcontainers.DockerClientFactory&amp#27;[0;39m - &amp#27;[32mChecking the system...
+&amp#27;[0;39m2024-09-19 10:20:33,503 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.testcontainers.DockerClientFactory&amp#27;[0;39m - &amp#27;[32m✔︎ Docker server version should be at least 1.6.0
+&amp#27;[0;39m2024-09-19 10:20:33,503 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.postgres:15.3-alpine3.18&amp#27;[0;39m - &amp#27;[32mCreating container for image: postgres:15.3-alpine3.18
+&amp#27;[0;39m2024-09-19 10:20:33,519 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.postgres:15.3-alpine3.18&amp#27;[0;39m - &amp#27;[32mContainer postgres:15.3-alpine3.18 is starting: 54a7dd078cd0d2d61f7e802c220063a1f416b6e7bbcb21f50e2eaf4064b04c50
+&amp#27;[0;39m2024-09-19 10:20:34,862 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.postgres:15.3-alpine3.18&amp#27;[0;39m - &amp#27;[32mContainer postgres:15.3-alpine3.18 started in PT1.358558798S
+&amp#27;[0;39m2024-09-19 10:20:34,863 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mtc.postgres:15.3-alpine3.18&amp#27;[0;39m - &amp#27;[32mContainer is started (JDBC URL: jdbc:postgresql://localhost:32777/test?loggerLevel=OFF)
+&amp#27;[0;39m2024-09-19 10:20:35,256 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.h.b.i.BytecodeProviderInitiator&amp#27;[0;39m - &amp#27;[32mHHH000021: Bytecode provider name : bytebuddy
+&amp#27;[0;39m2024-09-19 10:20:35,724 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.h.e.t.j.p.i.JtaPlatformInitiator&amp#27;[0;39m - &amp#27;[32mHHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 &amp#27;[0;39mHibernate: alter table if exists user_roles drop constraint if exists FKdcdh0gl1mdce42vy0klyio6fi
-2024-06-27 08:52:03,044 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.access&amp#27;[0;39m - &amp#27;[32mHHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@b34c7c9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-&amp#27;[0;39m2024-06-27 08:52:03,047 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mSQL Warning Code: 0, SQLState: 00000
-&amp#27;[0;39m2024-06-27 08:52:03,047 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mrelation "user_roles" does not exist, skipping
+2024-09-19 10:20:35,738 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.access&amp#27;[0;39m - &amp#27;[32mHHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@29f95272] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+&amp#27;[0;39m2024-09-19 10:20:35,741 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mSQL Warning Code: 0, SQLState: 00000
+&amp#27;[0;39m2024-09-19 10:20:35,741 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mrelation "user_roles" does not exist, skipping
 &amp#27;[0;39mHibernate: alter table if exists user_roles drop constraint if exists FKscvbq0n9bo03s7w6ujfyrtg4a
-2024-06-27 08:52:03,048 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mSQL Warning Code: 0, SQLState: 00000
-&amp#27;[0;39m2024-06-27 08:52:03,048 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mrelation "user_roles" does not exist, skipping
+2024-09-19 10:20:35,742 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mSQL Warning Code: 0, SQLState: 00000
+&amp#27;[0;39m2024-09-19 10:20:35,742 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mrelation "user_roles" does not exist, skipping
 &amp#27;[0;39mHibernate: drop table if exists person cascade
-2024-06-27 08:52:03,049 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mSQL Warning Code: 0, SQLState: 00000
-&amp#27;[0;39m2024-06-27 08:52:03,049 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mtable "person" does not exist, skipping
+2024-09-19 10:20:35,743 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mSQL Warning Code: 0, SQLState: 00000
+&amp#27;[0;39m2024-09-19 10:20:35,743 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mtable "person" does not exist, skipping
 &amp#27;[0;39mHibernate: drop table if exists roles cascade
-2024-06-27 08:52:03,049 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mSQL Warning Code: 0, SQLState: 00000
-&amp#27;[0;39m2024-06-27 08:52:03,049 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mtable "roles" does not exist, skipping
+2024-09-19 10:20:35,743 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mSQL Warning Code: 0, SQLState: 00000
+&amp#27;[0;39m2024-09-19 10:20:35,743 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mtable "roles" does not exist, skipping
 &amp#27;[0;39mHibernate: drop table if exists user_roles cascade
-2024-06-27 08:52:03,050 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mSQL Warning Code: 0, SQLState: 00000
-&amp#27;[0;39m2024-06-27 08:52:03,050 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mtable "user_roles" does not exist, skipping
+2024-09-19 10:20:35,744 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mSQL Warning Code: 0, SQLState: 00000
+&amp#27;[0;39m2024-09-19 10:20:35,744 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mtable "user_roles" does not exist, skipping
 &amp#27;[0;39mHibernate: drop table if exists users cascade
-2024-06-27 08:52:03,050 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mSQL Warning Code: 0, SQLState: 00000
-&amp#27;[0;39m2024-06-27 08:52:03,050 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mtable "users" does not exist, skipping
+2024-09-19 10:20:35,744 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mSQL Warning Code: 0, SQLState: 00000
+&amp#27;[0;39m2024-09-19 10:20:35,744 [main] &amp#27;[31mWARN &amp#27;[0;39m &amp#27;[36mo.h.e.jdbc.spi.SqlExceptionHelper&amp#27;[0;39m - &amp#27;[32mtable "users" does not exist, skipping
 &amp#27;[0;39mHibernate: create table person (age integer not null, id serial not null, name varchar(255) not null, primary key (id))
-2024-06-27 08:52:03,054 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.access&amp#27;[0;39m - &amp#27;[32mHHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@70777a65] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-09-19 10:20:35,747 [main] &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[36mo.hibernate.orm.connections.access&amp#27;[0;39m - &amp#27;[32mHHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@61c4cebd] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 &amp#27;[0;39mHibernate: create table roles (role_name varchar(255) not null check (role_name in ('USER','SUPERVISOR','ADMIN','MANAGER','ANYONE')), primary key (role_name))
 Hibernate: create table user_roles (role_name varchar(255) not null, user_name varchar(255) not null, primary key (role_name, user_name))
 Hibernate: create table users (user_name varchar(255) not null, user_password varchar(255) not null, primary key (user_name))
@@ -129,39 +118,356 @@ Hibernate: insert into person (age,name) values (?,?)
 Hibernate: insert into person (age,name) values (?,?)
 ]]></system-out>
   </testcase>
-  <testcase name="delete" classname="dk.lyngby.dao.PersonDaoTest" time="0.031">
+  <testcase name="delete" classname="dk.lyngby.dao.PersonDaoTest" time="0.005">
+    <error message="detached entity passed to persist: dk.lyngby.model.Person" type="org.hibernate.PersistentObjectException"><![CDATA[org.hibernate.PersistentObjectException: detached entity passed to persist: dk.lyngby.model.Person
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:88)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:54)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:755)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:739)
+	at dk.lyngby.dao.PersonDaoTest.init(PersonDaoTest.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:128)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeEachMethod(TimeoutExtension.java:78)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeMethodInExtensionContext(ClassBasedTestDescriptor.java:520)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$synthesizeBeforeEachMethodAdapter$23(ClassBasedTestDescriptor.java:505)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachMethods$3(TestMethodTestDescriptor.java:174)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$6(TestMethodTestDescriptor.java:202)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:202)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachMethods(TestMethodTestDescriptor.java:171)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:134)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:50)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></error>
     <system-out><![CDATA[Hibernate: delete from person
-Hibernate: insert into person (age,name) values (?,?)
-Hibernate: insert into person (age,name) values (?,?)
-Hibernate: insert into person (age,name) values (?,?)
-Hibernate: select p1_0.id,p1_0.age,p1_0.name from person p1_0 where p1_0.id=?
-Hibernate: delete from person where id=?
-Hibernate: select p1_0.id,p1_0.age,p1_0.name from person p1_0 where p1_0.id=?
 ]]></system-out>
   </testcase>
-  <testcase name="getAll" classname="dk.lyngby.dao.PersonDaoTest" time="0.05">
+  <testcase name="getAll" classname="dk.lyngby.dao.PersonDaoTest" time="0.003">
+    <error message="detached entity passed to persist: dk.lyngby.model.Person" type="org.hibernate.PersistentObjectException"><![CDATA[org.hibernate.PersistentObjectException: detached entity passed to persist: dk.lyngby.model.Person
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:88)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:54)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:755)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:739)
+	at dk.lyngby.dao.PersonDaoTest.init(PersonDaoTest.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:128)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeEachMethod(TimeoutExtension.java:78)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeMethodInExtensionContext(ClassBasedTestDescriptor.java:520)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$synthesizeBeforeEachMethodAdapter$23(ClassBasedTestDescriptor.java:505)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachMethods$3(TestMethodTestDescriptor.java:174)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$6(TestMethodTestDescriptor.java:202)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:202)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachMethods(TestMethodTestDescriptor.java:171)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:134)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:50)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></error>
     <system-out><![CDATA[Hibernate: delete from person
-Hibernate: insert into person (age,name) values (?,?)
-Hibernate: insert into person (age,name) values (?,?)
-Hibernate: insert into person (age,name) values (?,?)
-Hibernate: select p1_0.id,p1_0.age,p1_0.name from person p1_0
 ]]></system-out>
   </testcase>
-  <testcase name="update" classname="dk.lyngby.dao.PersonDaoTest" time="0.015">
+  <testcase name="update" classname="dk.lyngby.dao.PersonDaoTest" time="0.003">
+    <error message="detached entity passed to persist: dk.lyngby.model.Person" type="org.hibernate.PersistentObjectException"><![CDATA[org.hibernate.PersistentObjectException: detached entity passed to persist: dk.lyngby.model.Person
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:88)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:54)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:755)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:739)
+	at dk.lyngby.dao.PersonDaoTest.init(PersonDaoTest.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:128)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeEachMethod(TimeoutExtension.java:78)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeMethodInExtensionContext(ClassBasedTestDescriptor.java:520)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$synthesizeBeforeEachMethodAdapter$23(ClassBasedTestDescriptor.java:505)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachMethods$3(TestMethodTestDescriptor.java:174)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$6(TestMethodTestDescriptor.java:202)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:202)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachMethods(TestMethodTestDescriptor.java:171)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:134)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:50)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></error>
     <system-out><![CDATA[Hibernate: delete from person
-Hibernate: insert into person (age,name) values (?,?)
-Hibernate: insert into person (age,name) values (?,?)
-Hibernate: insert into person (age,name) values (?,?)
-Hibernate: select p1_0.id,p1_0.age,p1_0.name from person p1_0 where p1_0.id=?
-Hibernate: update person set age=?,name=? where id=?
 ]]></system-out>
   </testcase>
-  <testcase name="get" classname="dk.lyngby.dao.PersonDaoTest" time="0.008">
+  <testcase name="get" classname="dk.lyngby.dao.PersonDaoTest" time="0.002">
+    <error message="detached entity passed to persist: dk.lyngby.model.Person" type="org.hibernate.PersistentObjectException"><![CDATA[org.hibernate.PersistentObjectException: detached entity passed to persist: dk.lyngby.model.Person
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:88)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:54)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:755)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:739)
+	at dk.lyngby.dao.PersonDaoTest.init(PersonDaoTest.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:128)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeEachMethod(TimeoutExtension.java:78)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeMethodInExtensionContext(ClassBasedTestDescriptor.java:520)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$synthesizeBeforeEachMethodAdapter$23(ClassBasedTestDescriptor.java:505)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachMethods$3(TestMethodTestDescriptor.java:174)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$6(TestMethodTestDescriptor.java:202)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:202)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachMethods(TestMethodTestDescriptor.java:171)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:134)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:50)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></error>
     <system-out><![CDATA[Hibernate: delete from person
-Hibernate: insert into person (age,name) values (?,?)
-Hibernate: insert into person (age,name) values (?,?)
-Hibernate: insert into person (age,name) values (?,?)
-Hibernate: select p1_0.id,p1_0.age,p1_0.name from person p1_0 where p1_0.id=?
 ]]></system-out>
   </testcase>
 </testsuite>

@@ -1,5 +1,6 @@
 package dk.lyngby.config;
 
+import dk.lyngby.model.Person;
 import dk.lyngby.model.Role;
 import dk.lyngby.model.User;
 import jakarta.persistence.EntityManagerFactory;
@@ -119,7 +120,7 @@ public class HibernateConfig {
     private static void getAnnotationConfiguration(Configuration configuration) {
         configuration.addAnnotatedClass(User.class);
         configuration.addAnnotatedClass(Role.class);
-        configuration.addAnnotatedClass(dk.lyngby.model.Person.class);
+        configuration.addAnnotatedClass(Person.class);
     }
 
 }

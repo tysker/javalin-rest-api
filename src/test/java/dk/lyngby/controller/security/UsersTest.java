@@ -7,11 +7,14 @@ import jakarta.persistence.EntityManagerFactory;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import util.LoginUtil;
 
 import static io.restassured.RestAssured.given;
 
+
 public class UsersTest {
+
     private static Javalin app;
     private static final String BASE_URL = "http://localhost:7777/api/v1";
     private static Object adminToken;

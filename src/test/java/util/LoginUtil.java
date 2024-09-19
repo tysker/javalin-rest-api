@@ -50,6 +50,7 @@ public class LoginUtil {
     public static void createTestUsers(EntityManagerFactory emf){
         persistTestUsers(emf);
     }
+
     public static Object getAdminToken() {
         return login("admin", "admin123");
     }

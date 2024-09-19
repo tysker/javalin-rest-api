@@ -1,9 +1,9 @@
 package dk.lyngby.config;
 
 import dk.lyngby.controller.security.AccessManagerController;
-import dk.lyngby.model.ClaimBuilder;
 import dk.lyngby.model.User;
 import dk.lyngby.routes.Routes;
+import dk.token.model.ClaimBuilder;
 import io.javalin.Javalin;
 import io.javalin.config.JavalinConfig;
 import io.javalin.http.Context;

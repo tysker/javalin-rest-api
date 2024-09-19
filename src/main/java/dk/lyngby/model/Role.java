@@ -22,14 +22,13 @@ public class Role {
 
     @ManyToMany(mappedBy = "roleList")
     @ToString.Exclude
-    private Set<User> userList = new HashSet<>();
+    private final Set<User> userList = new HashSet<>();
 
     public Role(RoleName roleName) {
         this.roleName = roleName;
     }
 
     public enum RoleName implements io.javalin.security.RouteRole{
-        USER, SUPERVISOR, ADMIN, MANAGER, ANYONE;
-
+        USER, SUPERVISOR, ADMIN, MANAGER, ANYONE
     }
 }

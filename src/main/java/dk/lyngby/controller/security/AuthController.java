@@ -2,7 +2,6 @@ package dk.lyngby.controller.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import dk.lyngby.TokenFactory;
 import dk.lyngby.config.ApplicationConfig;
 import dk.lyngby.config.HibernateConfig;
 import dk.lyngby.dao.AuthDao;
@@ -10,10 +9,11 @@ import dk.lyngby.dto.LoginDto;
 import dk.lyngby.dto.RegisterDto;
 import dk.lyngby.exception.ApiException;
 import dk.lyngby.exception.AuthorizationException;
-import dk.lyngby.exceptions.TokenException;
-import dk.lyngby.model.ClaimBuilder;
 import dk.lyngby.model.Role;
 import dk.lyngby.model.User;
+import dk.token.TokenFactory;
+import dk.token.exceptions.TokenException;
+import dk.token.model.ClaimBuilder;
 import io.javalin.http.Context;
 import jakarta.persistence.EntityManagerFactory;
 
@@ -44,7 +44,7 @@ public class AuthController {
         ctx.json(createResponseObject(user.getUsername(), roleList, token));
     }
 
-    public void register(Context ctx) throws ApiException, TokenException, IOException {
+    public void register(Context ctx) throws ApiException, TokenException, IOException, TokenException {
 
         // TODO: validate user
         RegisterDto registerDto = validateUser(ctx);
