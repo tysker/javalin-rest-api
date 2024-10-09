@@ -12,9 +12,9 @@ public class Routes {
 
     public EndpointGroup getRoutes() {
         return () -> {
-            path("/", authRoutes.getRoutes());
+            path("/auth", authRoutes.getRoutes());
             path("/test", () -> {
-                get("/", ctx -> ctx.json("{\"msg\":\"Hello from test\"}"), Role.RoleName.ANYONE);
+                get("/", ctx -> ctx.json("{\"msg\":\"Hello from test\"}"), Role.RoleName.ADMIN);
             });
         };
     }

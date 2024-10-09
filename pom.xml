@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dk.lyngby</groupId>
-    <artifactId>javalin-rest-api-3sem</artifactId>
+    <artifactId>javalin-rest-api</artifactId>
     <version>1.0.0</version>
 
 

@@ -24,8 +24,6 @@ public class AccessManagerController {
 //            return; // if there are no route roles, we don't need to check anything
 //        }
 
-        System.out.println(ctx.routeRoles());
-        System.out.println(ctx.method().toString());
 
         if (!ctx.routeRoles().contains(Role.RoleName.ANYONE)) {
             boolean isAuthorized = false;
@@ -57,7 +55,6 @@ public class AccessManagerController {
         } catch (Exception e) {
             throw new TokenException("No Token provided", e);
         }
-
 
         // TODO: verify token and get roles from token
         try {

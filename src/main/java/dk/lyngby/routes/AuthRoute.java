@@ -13,7 +13,7 @@ public class AuthRoute {
     public EndpointGroup getRoutes() {
 
         return () -> {
-            path("/auth", () -> {
+            path("/", () -> {
                 post("/login", authController::login, Role.RoleName.ANYONE);
                 post("/register", authController::register, Role.RoleName.ANYONE);
             });
